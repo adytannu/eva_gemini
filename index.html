@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eva's Apps</title>
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <p class="kicker">Playground</p>
+        <h1>Eva's Games & Apps</h1>
+        <p>Pick an app below. Add more by creating a folder in <code>apps/</code> and a new entry in <code>assets/apps.js</code>.</p>
+      </header>
+
+      <section>
+        <ul id="app-list" class="grid" aria-label="App directory"></ul>
+      </section>
+    </main>
+
+    <script src="assets/apps.js"></script>
+    <script>
+      const appList = document.getElementById("app-list");
+
+      APPS.forEach((app) => {
+        const item = document.createElement("li");
+        item.className = "card";
+
+        const tag = app.status ? `<span class="tag">${app.status}</span>` : "";
+
+        item.innerHTML = `
+          <a class="card-link" href="${app.path}">
+            <div class="card-top">${tag}</div>
+            <h2>${app.title}</h2>
+            <p>${app.description}</p>
+            <span class="open">Open app →</span>
+          </a>
+        `;
+
+        appList.appendChild(item);
+      });
+    </script>
+  </body>
+</html>

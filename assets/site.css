@@ -1,0 +1,149 @@
+:root {
+  --bg: #fffaf2;
+  --panel: #ffffff;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #0ea5e9;
+  --line: #e5e7eb;
+  --shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 5% 0%, #fde68a 0, transparent 35%),
+    radial-gradient(circle at 100% 10%, #bae6fd 0, transparent 35%),
+    var(--bg);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(31, 41, 55, 0.15);
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+.card h2 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.12rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  min-height: 2.5rem;
+}
+
+.card-top {
+  min-height: 1.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #0c4a6e;
+  background: #e0f2fe;
+}
+
+.open {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.app-shell {
+  width: min(900px, 92vw);
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.back {
+  color: #334155;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.app-panel {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #0284c7;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0369a1;
+}
