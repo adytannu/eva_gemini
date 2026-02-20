@@ -161,4 +161,10 @@ const APPS = [
     path: "apps/eva-app-27/",
     status: "Live",
   },
+  {
+    title: "Stuffy Friends Messenger 🧸",
+    description: "Imported app from Eva.",
+    path: "apps/eva-app-28/",
+    status: "Live",
+  },
 ];

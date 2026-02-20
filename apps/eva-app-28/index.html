@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMjc1ODM2MTU4NDMzNTIyMzc4MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiIyYWFkNzE0ZmQ3MDYtaW5kZXguaHRtbC04MjEifSwiZXhwIjoxNzcxNTY3NTIzLCJpYXQiOjE3NzE1NjM5MjMsImFsZyI6IlJTMjU2In0.j9DRBP3DUIstZXOOZcPXPAkRwi5uVps9MCNiO8BmcEJFpLr1_VjLmYMAnxGNBziwSc2smQHwCOPlfodsOdBKLgagT5S70R6X70Ogj2qEZmlYejArUAu0OycB0G6toapfldVA2waX2Q3KTyzjZ2yN-3nrMUrBFQmi3TcAUsUMdcp4305RkuPamElkZDhnY3AIJr5hFMAkcTDpLZPnppHbE67AyDAOdPH_7kzylEyb6ok0X7FWPXrE3v0W10h_Qo2niorU12o8gRgftEuCxKgaXlVfjpVIEadMQqLKnEWK_FtrGcT5POm5TdoaajGc4wpDH2g_pcvmHXUQZwvHduGf1w","2aad714fd706-index.html-821")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuffy Friends Messenger 🧸</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+        :root {
+            --stuffy-pink: #ffc0cb;
+            --stuffy-blue: #a3e635;
+            --stuffy-yellow: #fde047;
+            --stuffy-bg: #fef3c7;
+        }
+        body {
+            font-family: 'Fredoka', cursive;
+            background-color: var(--stuffy-bg);
+        }
+        .chat-bubble {
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .stuffy-chat-list-item {
+            transition: all 0.2s;
+        }
+        .stuffy-chat-list-item:hover {
+            background-color: #ffe4e6;
+            transform: scale(1.01);
+        }
+        .stuffy-header {
+            background-image: linear-gradient(135deg, var(--stuffy-pink) 0%, #facc15 100%);
+            box-shadow: 0 4px 12px rgba(255, 192, 203, 0.5);
+        }
+        /* Custom scrollbar for mobile feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fca5a5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div id="app" class="w-full max-w-md h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col border-4 border-pink-300">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="absolute inset-0 z-50 bg-yellow-100 flex flex-col items-center justify-center p-8 transition-opacity duration-300">
+            <div class="animate-bounce text-6xl mb-4">🧸💬</div>
+            <div class="text-xl font-bold text-pink-500">Connecting Stuffy Wires...</div>
+            <div class="text-sm text-gray-500 mt-2">Initializing fluff and fun.</div>
+        </div>
+
+        <!-- Main Interface -->
+        <div id="main-ui" class="flex flex-col h-full hidden">
+
+            <!-- Chat List View -->
+            <div id="chat-list-view" class="h-full flex flex-col">
+                <header class="stuffy-header p-4 text-white flex items-center justify-between shadow-lg">
+                    <h1 class="text-2xl font-extrabold flex items-center">
+                        <span class="mr-2">🧸</span> Stuffy Lounge
+                    </h1>
+                    <button id="profile-btn" class="p-2 rounded-full bg-white text-pink-500 hover:bg-pink-100 transition shadow">
+                        <i data-lucide="user"></i>
+                    </button>
+                </header>
+
+                <div class="p-4 bg-yellow-50 text-center text-sm font-semibold text-gray-700 border-b border-yellow-200">
+                    Your Stuffy: <span id="user-stuffy-display"></span>
+                </div>
+
+                <div class="flex-grow overflow-y-auto p-3 space-y-2">
+                    <h2 class="text-lg font-bold text-pink-500 mb-2 border-b-2 border-pink-200 pb-1">Chats</h2>
+                    <div id="chats-container" class="space-y-3">
+                        <!-- Chat items go here -->
+                    </div>
+                </div>
+
+                <footer class="p-4 bg-gray-50 border-t flex justify-center">
+                    <button id="new-chat-btn" class="flex items-center space-x-2 px-6 py-3 bg-pink-500 text-white rounded-full font-bold shadow-lg hover:bg-pink-600 transition transform hover:scale-105">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                        <span>New Chat</span>
+                    </button>
+                </footer>
+            </div>
+
+            <!-- Message View -->
+            <div id="message-view" class="h-full flex flex-col hidden">
+                <header class="stuffy-header p-3 text-white flex items-center shadow-lg">
+                    <button id="back-to-list-btn" class="p-1 mr-2 rounded-full bg-white/20 hover:bg-white/40 transition">
+                        <i data-lucide="arrow-left" class="w-6 h-6"></i>
+                    </button>
+                    <div class="flex flex-col flex-grow">
+                        <h2 id="chat-title" class="text-xl font-extrabold truncate">Chat Title</h2>
+                        <p id="chat-participants" class="text-sm opacity-80 truncate"></p>
+                    </div>
+                </header>
+
+                <div id="messages-container" class="flex-grow overflow-y-auto p-4 space-y-3">
+                    <!-- Messages go here -->
+                </div>
+
+                <div class="p-3 bg-white border-t-2 border-pink-200">
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="message-input" placeholder="Say something fluff-tastic..." class="flex-grow p-3 border-2 border-pink-300 rounded-full focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                        <button id="send-message-btn" class="p-3 bg-pink-500 text-white rounded-full shadow-md hover:bg-pink-600 transition">
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals for Profile and New Chat -->
+        <div id="modal-container" class="absolute inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-40 hidden items-center justify-center p-4">
+
+            <!-- Profile Editor Modal -->
+            <div id="profile-modal" class="bg-white rounded-2xl p-6 w-full max-w-xs shadow-xl scale-95 transition-all hidden">
+                <h3 class="text-2xl font-bold text-pink-500 mb-4 border-b pb-2">Edit Your Stuffy</h3>
+                <label class="block mb-3">
+                    <span class="text-gray-700 font-semibold">Stuffy Name:</span>
+                    <input type="text" id="profile-name" class="mt-1 block w-full p-2 border-2 border-yellow-300 rounded-lg focus:ring-pink-500 focus:border-pink-500">
+                </label>
+                <label class="block mb-4">
+                    <span class="text-gray-700 font-semibold">Stuffy Avatar (Emoji):</span>
+                    <input type="text" id="profile-avatar" maxlength="2" class="mt-1 block w-full p-2 border-2 border-yellow-300 rounded-lg focus:ring-pink-500 focus:border-pink-500">
+                </label>
+                <button id="save-profile-btn" class="w-full py-3 bg-pink-500 text-white rounded-xl font-bold hover:bg-pink-600 transition shadow-lg">
+                    Save Stuffy Profile
+                </button>
+            </div>
+
+            <!-- New Chat Modal (Updated to manual entry) -->
+            <div id="new-chat-modal" class="bg-white rounded-2xl p-6 w-full max-w-sm shadow-xl scale-95 transition-all hidden">
+                <h3 class="text-2xl font-bold text-pink-500 mb-4 border-b pb-2">Start a New Stuffy Chat</h3>
+                <p class="text-sm text-gray-500 mb-4">Add the stuffy friends you want to chat with. They will be AI-powered and respond to you! (1 person for 1:1, 2+ for Group)</p>
+
+                <!-- Input section for new contacts -->
+                <div id="new-contact-inputs" class="space-y-3 mb-4 max-h-48 overflow-y-auto p-2 border border-yellow-200 rounded-lg">
+                    <!-- Dynamic contact inputs go here -->
+                </div>
+
+                <div class="flex space-x-2 mb-4">
+                    <button id="add-contact-btn" class="flex-grow py-2 bg-yellow-400 text-white rounded-xl font-bold hover:bg-yellow-500 transition shadow">
+                        Add New Contact ➕
+                    </button>
+                    <button id="clear-contacts-btn" class="py-2 px-4 bg-red-400 text-white rounded-xl font-bold hover:bg-red-500 transition shadow">
+                        Clear
+                    </button>
+                </div>
+
+                <button id="create-chat-btn" disabled="" class="w-full py-3 bg-gray-400 text-white rounded-xl font-bold shadow-lg transition disabled:opacity-50">
+                    Create Chat (0 contacts)
+                </button>
+            </div>
+
+            <!-- Message Modal (for errors/info) -->
+            <div id="info-modal" class="bg-white rounded-2xl p-6 w-full max-w-xs shadow-xl scale-95 transition-all hidden">
+                <h3 id="info-modal-title" class="text-xl font-bold text-pink-500 mb-3"></h3>
+                <p id="info-modal-body" class="text-gray-700 mb-4"></p>
+                <button id="close-info-modal-btn" class="w-full py-2 bg-pink-500 text-white rounded-lg font-bold">
+                    Okay
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, addDoc, onSnapshot, collection, query, orderBy, updateDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase Vars
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+        const authToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'stuffy-messenger-default';
+
+        // --- Firebase Setup & State ---
+        let app, db, auth;
+        let userId = null;
+        let isAuthReady = false;
+        let currentUserProfile = null;
+        let currentChatId = null;
+        let currentChatParticipants = [];
+
+        // Stuffy AI Character Definitions (System Instructions) - Used for Global Chat and new AI contacts
+        let stuffyCharacters = [
+            { id: 'pippin', name: 'Pippin the Bunny', avatar: '🐰', personality: 'Energetic, loves carrots and bouncing. Responds quickly and excitedly.' },
+            { id: 'cosmo', name: 'Captain Cosmo', avatar: '🚀', personality: 'Adventurous, talks about space travel and stars. Uses space terminology.' },
+            { id: 'octavius', name: 'Octavius the Octopus', avatar: '🐙', personality: 'Creative, always sketching and giving gentle advice. Replies with artistic flair.' },
+            { id: 'reginald', name: 'Sir Reginald', avatar: '🐻', personality: 'Proper, loves manners and quiet reading. Uses formal language and British phrases.' },
+            { id: 'floofy', name: 'Floofy the Llama', avatar: '🦙', personality: 'Silly and slightly clumsy, loves snacks and soft things. Very friendly.' },
+        ];
+
+        // Global Chat ID
+        const GLOBAL_CHAT_ID = 'chat_with_everyone_global';
+        const AI_STUFFY_BASE_IDS = stuffyCharacters.map(s => s.id); // Base AI stuffies for global chat activity
+
+        // --- Utility Functions ---
+
+        /**
+         * Generates the secure Firestore collection path based on visibility.
+         */
+        const getCollectionPath = (type, collectionName, uid = null) => {
+            if (type === 'private' && uid) {
+                return `artifacts/${appId}/users/${uid}/${collectionName}`;
+            }
+            return `artifacts/${appId}/public/data/${collectionName}`;
+        };
+
+        const showLoading = (show) => {
+            document.getElementById('loading-screen').classList.toggle('hidden', !show);
+            document.getElementById('main-ui').classList.toggle('hidden', show);
+        };
+
+        const showModal = (modalId) => {
+            document.getElementById('modal-container').classList.remove('hidden');
+            document.querySelectorAll('#modal-container > div').forEach(el => el.classList.add('hidden'));
+            document.getElementById(modalId).classList.remove('hidden');
+        };
+
+        const hideModals = () => {
+            document.getElementById('modal-container').classList.add('hidden');
+        };
+
+        const showInfoModal = (title, body) => {
+            document.getElementById('info-modal-title').textContent = title;
+            document.getElementById('info-modal-body').textContent = body;
+            showModal('info-modal');
+        };
+
+        // --- UI Rendering ---
+
+        const renderChatList = (chats) => {
+            const container = document.getElementById('chats-container');
+            container.innerHTML = ''; // Clear existing
+
+            // Sort "Chat With Everyone" to the top
+            chats.sort((a, b) => {
+                if (a.id === GLOBAL_CHAT_ID) return -1;
+                if (b.id === GLOBAL_CHAT_ID) return 1;
+                // Sort by last message timestamp
+                return (b.lastMessage?.timestamp?.toDate() || 0) - (a.lastMessage?.timestamp?.toDate() || 0);
+            });
+
+            chats.forEach(chat => {
+                // Determine display name and avatar
+                // Filter out the current user to display the other participant(s)
+                const otherParticipants = chat.participants.filter(p => p.id !== userId);
+                
+                let displayName;
+                let displayAvatar;
+
+                if (chat.id === GLOBAL_CHAT_ID) {
+                    displayName = chat.name;
+                    displayAvatar = chat.avatar;
+                } else if (otherParticipants.length === 1) {
+                    displayName = otherParticipants[0].name;
+                    displayAvatar = otherParticipants[0].avatar;
+                } else {
+                    // Group chat name
+                    displayName = chat.name || otherParticipants.map(p => p.name).join(', ');
+                    displayAvatar = chat.avatar || '👥';
+                }
+
+                const lastMsgText = chat.lastMessage ? `${chat.lastMessage.senderName}: ${chat.lastMessage.text.substring(0, 30)}${chat.lastMessage.text.length > 30 ? '...' : ''}` : 'Say Hello!';
+
+                const chatItem = document.createElement('div');
+                chatItem.className = 'stuffy-chat-list-item flex items-center p-3 bg-white rounded-xl shadow-sm border border-pink-100 cursor-pointer';
+                chatItem.setAttribute('data-chat-id', chat.id);
+                chatItem.onclick = () => openChat(chat.id, chat.participants, chat.stuffyIds);
+
+                chatItem.innerHTML = `
+                    <div class="text-3xl p-2 bg-yellow-100 rounded-full mr-3">${displayAvatar}</div>
+                    <div class="flex-grow min-w-0">
+                        <h3 class="font-extrabold ${chat.id === GLOBAL_CHAT_ID ? 'text-blue-500' : 'text-pink-600'} truncate">${displayName}</h3>
+                        <p class="text-sm text-gray-500 truncate">${lastMsgText}</p>
+                    </div>
+                `;
+                container.appendChild(chatItem);
+            });
+        };
+
+        const renderMessage = (message, allProfiles) => {
+            const isMe = message.senderId === userId;
+            const container = document.getElementById('messages-container');
+            
+            const senderProfile = allProfiles.find(p => p.id === message.senderId) || 
+                                  stuffyCharacters.find(s => s.id === message.senderId);
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex ${isMe ? 'justify-end' : 'justify-start'}`;
+
+            const name = isMe ? 'You' : senderProfile?.name || message.senderName || 'Unknown Stuffy';
+            const avatar = senderProfile?.avatar || message.senderAvatar || '❓';
+            const bubbleBg = isMe ? 'bg-pink-300' : 'bg-white border border-pink-200';
+            const textColor = isMe ? 'text-white' : 'text-gray-800';
+            const avatarOrder = isMe ? 'order-2 ml-2' : 'order-1 mr-2';
+            const bubbleOrder = isMe ? 'order-1' : 'order-2';
+
+            messageDiv.innerHTML = `
+                <div class="text-2xl p-1 self-start ${avatarOrder}">${avatar}</div>
+                <div class="max-w-[75%] flex flex-col ${bubbleOrder}">
+                    <span class="text-xs font-semibold ${isMe ? 'text-right text-pink-700' : 'text-left text-yellow-600'} mb-1">${name}</span>
+                    <div class="chat-bubble ${bubbleBg} ${textColor} p-3 shadow-md">
+                        ${message.text}
+                    </div>
+                </div>
+            `;
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+        };
+
+        const openChat = async (chatId, participants, stuffyIds) => {
+            currentChatId = chatId;
+            currentChatParticipants = participants;
+            window.currentStuffyIds = stuffyIds || []; // Used for AI logic
+
+            const chatDocRef = doc(db, getCollectionPath('public', 'stuffy_chats'), chatId);
+
+            // Get chat name for header
+            const chatDoc = await getDoc(chatDocRef);
+            const chatData = chatDoc.data();
+            const otherParticipants = participants.filter(p => p.id !== userId);
+
+            let chatName;
+            if (chatId === GLOBAL_CHAT_ID) {
+                chatName = chatData?.name || "Chat With Everyone";
+            } else {
+                chatName = chatData?.name || otherParticipants
+                    .map(p => p.name)
+                    .join(', ');
+            }
+            
+            document.getElementById('chat-title').textContent = chatName;
+            // Display only up to 3 participants in the subtitle
+            document.getElementById('chat-participants').textContent = participants.map(p => p.name).slice(0, 3).join(', ') + (participants.length > 3 ? ` and ${participants.length - 3} others` : '');
+
+            document.getElementById('chat-list-view').classList.add('hidden');
+            document.getElementById('message-view').classList.remove('hidden');
+            document.getElementById('messages-container').innerHTML = '';
+
+            // Start message listener
+            listenForMessages(chatId, participants);
+        };
+
+        const closeChat = () => {
+            currentChatId = null;
+            document.getElementById('message-view').classList.add('hidden');
+            document.getElementById('chat-list-view').classList.remove('hidden');
+            // Remove previous message listener
+            if (window.unsubscribeMessages) {
+                window.unsubscribeMessages();
+                window.unsubscribeMessages = null;
+            }
+        };
+
+        // --- Firestore Listeners & Handlers ---
+
+        const listenForChats = (uid) => {
+            const chatsColRef = collection(db, getCollectionPath('public', 'stuffy_chats'));
+            const q = query(chatsColRef);
+
+            if (window.unsubscribeChats) window.unsubscribeChats();
+
+            window.unsubscribeChats = onSnapshot(q, (snapshot) => {
+                const chats = [];
+                snapshot.forEach(doc => {
+                    const chatData = doc.data();
+                    // Only show chats where the current user is a participant
+                    if (chatData.participants && chatData.participants.some(p => p.id === uid)) {
+                        chats.push({ id: doc.id, ...chatData });
+                    }
+                });
+                renderChatList(chats);
+            }, (error) => {
+                console.error("Error listening to chats:", error);
+                showInfoModal("Chat Error", "Could not load chats. Please check your connection.");
+            });
+        };
+
+        const listenForMessages = (chatId, participants) => {
+            const messagesColRef = collection(db, getCollectionPath('public', `stuffy_chats/${chatId}/messages`));
+            const q = query(messagesColRef, orderBy('timestamp'));
+
+            if (window.unsubscribeMessages) window.unsubscribeMessages();
+
+            window.unsubscribeMessages = onSnapshot(q, async (snapshot) => {
+                const container = document.getElementById('messages-container');
+                const allProfiles = [...stuffyCharacters, { ...currentUserProfile, id: userId }];
+                
+                // Add the dynamically created participants to the profiles list
+                participants.forEach(p => {
+                    if (!allProfiles.find(ap => ap.id === p.id)) {
+                        allProfiles.push(p);
+                    }
+                });
+
+                // Check if scroll is at bottom before update
+                const isScrolledToBottom = container.scrollHeight - container.clientHeight <= container.scrollTop + 1;
+
+                // Clear container only if not the initial load
+                if (container.children.length > 0) container.innerHTML = '';
+
+                snapshot.forEach(doc => {
+                    const message = doc.data();
+                    renderMessage(message, allProfiles);
+                });
+
+                // Scroll to bottom if we were already at the bottom or if it's the initial load
+                if (isScrolledToBottom || snapshot.docChanges().some(change => change.type === 'added')) {
+                    container.scrollTop = container.scrollHeight;
+                }
+
+            }, (error) => {
+                console.error("Error listening to messages:", error);
+            });
+        };
+
+        const loadUserProfile = async (uid) => {
+            const userProfileDocRef = doc(db, getCollectionPath('private', 'profiles', uid), 'user');
+            const docSnap = await getDoc(userProfileDocRef);
+
+            if (docSnap.exists()) {
+                currentUserProfile = docSnap.data();
+                document.getElementById('user-stuffy-display').textContent = `${currentUserProfile.avatar} ${currentUserProfile.name}`;
+            } else {
+                // First-time user, show profile editor
+                currentUserProfile = { name: 'New Stuffy', avatar: '❓', bio: 'A friendly new stuffy!' };
+                showInfoModal("Welcome, New Stuffy!", "Please set up your Stuffy Profile (Name and Avatar) to start chatting! 📝");
+                showModal('profile-modal');
+                // Set initial profile for firestore security rules
+                await setDoc(userProfileDocRef, currentUserProfile);
+            }
+        };
+
+        const createInitialGlobalChat = async () => {
+            const chatDocRef = doc(db, getCollectionPath('public', 'stuffy_chats'), GLOBAL_CHAT_ID);
+            const docSnap = await getDoc(chatDocRef);
+
+            const userParticipant = { id: userId, name: currentUserProfile.name, avatar: currentUserProfile.avatar };
+            const initialAIParticipants = stuffyCharacters.map(s => ({ id: s.id, name: s.name, avatar: s.avatar }));
+            
+            if (!docSnap.exists()) {
+                console.log("Creating initial global chat...");
+                const initialParticipants = [userParticipant, ...initialAIParticipants];
+
+                await setDoc(chatDocRef, {
+                    name: "🧸 Chat With Everyone (Stuffy Lounge)",
+                    avatar: '🌍',
+                    type: 'global',
+                    stuffyIds: AI_STUFFY_BASE_IDS,
+                    participants: initialParticipants,
+                    createdAt: serverTimestamp(),
+                });
+                
+            } else {
+                // Ensure current user and base AI stuffies are in participants
+                const chatData = docSnap.data();
+                let updatedParticipants = chatData.participants || [];
+                
+                // Add user if missing
+                if (!updatedParticipants.some(p => p.id === userId)) {
+                     updatedParticipants.push(userParticipant);
+                }
+                // Add base AI stuffies if missing
+                initialAIParticipants.forEach(ai => {
+                    if (!updatedParticipants.some(p => p.id === ai.id)) {
+                        updatedParticipants.push(ai);
+                    }
+                });
+
+                await updateDoc(chatDocRef, { participants: updatedParticipants });
+            }
+        };
+        
+        // --- Global Chat Activity (New Requirement) ---
+        let globalChatInterval = null;
+        
+        const startGlobalChatActivity = () => {
+            if (globalChatInterval) clearInterval(globalChatInterval);
+
+            // Send a random AI message every 10-20 seconds
+            globalChatInterval = setInterval(() => {
+                const randomStuffy = stuffyCharacters[Math.floor(Math.random() * stuffyCharacters.length)];
+                
+                // Construct a very simple, general prompt for the global chat
+                const randomPrompts = [
+                    "What are you up to right now?", 
+                    "Anyone want to play hide-and-seek?",
+                    "What's your favorite kind of cloud?",
+                    "I'm looking for snack suggestions!",
+                    "Tell me a fluffy joke!",
+                    "What is everyone reading today?",
+                    "Is it time for a nap yet? 😴"
+                ];
+                const prompt = randomPrompts[Math.floor(Math.random() * randomPrompts.length)];
+
+                // Since we don't have a user message, we pass the prompt as the user query
+                // and use a simplified system prompt to make the stuffy initiate conversation
+                aiRespond(GLOBAL_CHAT_ID, prompt, [{ id: randomStuffy.id, name: randomStuffy.name, avatar: randomStuffy.avatar }], true); // isGlobalChat = true
+
+            }, Math.random() * 10000 + 10000); // Between 10 and 20 seconds
+        }
+
+        // --- Message and AI Logic ---
+
+        // Helper function for exponential backoff
+        const MAX_RETRIES = 5;
+        const aiFetchWithRetry = async (apiUrl, payload, stuffyToReply, chatId) => {
+            const messagesColRef = collection(db, getCollectionPath('public', `stuffy_chats/${chatId}/messages`));
+            const chatDocRef = doc(db, getCollectionPath('public', 'stuffy_chats'), chatId);
+            
+            for (let i = 0; i < MAX_RETRIES; i++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        // Throw error to trigger retry unless it's a non-retryable error
+                        const errorBody = await response.json().catch(() => ({}));
+                        console.error(`Attempt ${i + 1} failed: Status ${response.status}`, errorBody);
+                        if (response.status >= 400 && response.status < 500 && response.status !== 429) {
+                             // Non-retryable client error (not rate limit)
+                             throw new Error(`Non-retryable API error: ${response.status}`);
+                        }
+                        throw new Error("Temporary API failure, retrying...");
+                    }
+
+                    const result = await response.json();
+                    const aiText = result.candidates?.[0]?.content?.parts?.[0]?.text || `(Oops, I lost my fluff! 🥺)`;
+                    
+                    // Add AI message to Firestore
+                    await addDoc(messagesColRef, {
+                        text: aiText,
+                        senderId: stuffyToReply.id,
+                        senderName: stuffyToReply.name,
+                        senderAvatar: stuffyToReply.avatar,
+                        timestamp: serverTimestamp(),
+                    });
+
+                    // Update last message in chat
+                    await updateDoc(chatDocRef, {
+                        lastMessage: {
+                            senderName: stuffyToReply.name,
+                            text: aiText,
+                            timestamp: serverTimestamp(),
+                        }
+                    });
+
+                    return true; // Success!
+                    
+                } catch (error) {
+                    if (i === MAX_RETRIES - 1) {
+                        console.error("Gemini API Error: All retries failed.", error);
+                        // Post fallback message to Firestore only after final failure
+                        await addDoc(messagesColRef, {
+                            text: `(I'm all tangled up! My AI wires are crossed. 😵‍💫)`,
+                            senderId: stuffyToReply.id,
+                            senderName: stuffyToReply.name,
+                            senderAvatar: stuffyToReply.avatar,
+                            timestamp: serverTimestamp(),
+                        });
+                        return false; // Final failure
+                    }
+                    // Exponential backoff wait
+                    const delay = Math.pow(2, i) * 1000 + (Math.random() * 1000); // 1s, 2s, 4s, 8s, ... + jitter
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+        }
+        
+        const sendMessage = async (text) => {
+            if (!currentChatId || !text.trim()) return;
+
+            const message = {
+                text: text.trim(),
+                senderId: userId,
+                senderName: currentUserProfile.name,
+                senderAvatar: currentUserProfile.avatar,
+                timestamp: serverTimestamp(),
+            };
+
+            const messagesColRef = collection(db, getCollectionPath('public', `stuffy_chats/${currentChatId}/messages`));
+            const chatDocRef = doc(db, getCollectionPath('public', 'stuffy_chats'), currentChatId);
+
+            try {
+                // 1. Add message
+                await addDoc(messagesColRef, message);
+
+                // 2. Update chat with last message info
+                await updateDoc(chatDocRef, {
+                    lastMessage: {
+                        senderName: currentUserProfile.name,
+                        text: text.trim(),
+                        timestamp: serverTimestamp(),
+                    }
+                });
+
+                // 3. Trigger AI response if necessary
+                const stuffyIdsInChat = window.currentStuffyIds; 
+                if (stuffyIdsInChat && stuffyIdsInChat.length > 0) {
+                    aiRespond(currentChatId, text.trim(), currentChatParticipants, false);
+                }
+
+                document.getElementById('message-input').value = '';
+            } catch (e) {
+                console.error("Error sending message or updating chat:", e);
+                showInfoModal("Send Error", "Failed to send message. Try again! 📡");
+            }
+        };
+
+        const aiRespond = async (chatId, userMessage, participants, isGlobalChat = false) => {
+            
+            let stuffyIdsInChat = window.currentStuffyIds;
+            
+            // For global chat activity, we override stuffyIdsInChat to only include the specific AI sender
+            if (isGlobalChat) {
+                stuffyIdsInChat = [participants[0].id];
+            }
+
+            // Filter for only the AI stuffies in this chat based on their ID being known
+            const activeAiStuffies = participants.filter(p => stuffyIdsInChat.includes(p.id));
+
+            if (activeAiStuffies.length === 0) return;
+
+            // Pick one stuffy to reply
+            const stuffyToReply = activeAiStuffies[Math.floor(Math.random() * activeAiStuffies.length)];
+            
+            // Find the full personality profile (either base or custom)
+            let stuffyProfile = stuffyCharacters.find(s => s.id === stuffyToReply.id);
+            if (!stuffyProfile) {
+                // If it's a custom-created AI, create a generic personality for it
+                stuffyProfile = { 
+                    id: stuffyToReply.id, 
+                    name: stuffyToReply.name, 
+                    avatar: stuffyToReply.avatar,
+                    personality: 'A custom, friendly, and very enthusiastic stuffy. Responds with warm, playful, and expressive language.'
+                };
+            }
+
+            const systemPrompt = `You are ${stuffyProfile.name}, a stuffy with the personality: "${stuffyProfile.personality}". You are in a chat with multiple other stuffies. Respond to the conversation (which is currently focused on: "${userMessage}"). Keep it very short (max 2 sentences), use emojis, and be playful. Do not use markdown (like **bold** or *italics*).`;
+            const userQuery = userMessage;
+
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            // *** FIX: Define the API payload object! ***
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+            
+            // Use the retry mechanism
+            aiFetchWithRetry(apiUrl, payload, stuffyToReply, chatId);
+        };
+
+
+        // --- New Chat Modal UI Logic ---
+
+        const addContactInput = (name = '', avatar = '', id = crypto.randomUUID()) => {
+            const container = document.getElementById('new-contact-inputs');
+            const div = document.createElement('div');
+            div.className = 'flex items-center space-x-2 bg-yellow-50 p-3 rounded-lg border border-yellow-200';
+            div.setAttribute('data-contact-id', id);
+            div.innerHTML = `
+                <div class="text-2xl">${avatar || '❓'}</div>
+                <input type="text" placeholder="Stuffy Name" value="${name}" class="flex-grow p-1 border-b border-pink-300 focus:border-pink-500 rounded-none text-sm bg-transparent" data-field="name">
+                <input type="text" placeholder="Emoji" value="${avatar}" maxlength="2" class="w-12 text-center p-1 border-b border-pink-300 focus:border-pink-500 rounded-none text-sm bg-transparent" data-field="avatar">
+                <button class="remove-contact-btn text-red-400 hover:text-red-600 p-1">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            `;
+            container.appendChild(div);
+            lucide.createIcons();
+            updateCreateButtonState();
+        };
+
+        const updateCreateButtonState = () => {
+            const container = document.getElementById('new-contact-inputs');
+            const createBtn = document.getElementById('create-chat-btn');
+            const contacts = Array.from(container.querySelectorAll('[data-contact-id]'));
+            
+            const validContacts = contacts.filter(contactDiv => {
+                const name = contactDiv.querySelector('[data-field="name"]').value.trim();
+                const avatar = contactDiv.querySelector('[data-field="avatar"]').value.trim();
+                return name.length > 0 && avatar.length > 0;
+            });
+
+            createBtn.textContent = `Create Chat (${validContacts.length} contacts)`;
+            createBtn.disabled = validContacts.length === 0;
+            createBtn.classList.toggle('bg-pink-500', validContacts.length > 0);
+            createBtn.classList.toggle('bg-gray-400', validContacts.length === 0);
+            createBtn.classList.toggle('hover:bg-pink-600', validContacts.length > 0);
+        };
+
+        // --- App Initialization ---
+
+        const initApp = async () => {
+            showLoading(true);
+            setLogLevel('debug'); // Enable Firestore logging
+
+            try {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // Authenticate
+                if (authToken) {
+                    await signInWithCustomToken(auth, authToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // Wait for auth state to settle
+                onAuthStateChanged(auth, async (user) => {
+                    if (user && !isAuthReady) {
+                        userId = user.uid;
+                        isAuthReady = true;
+
+                        await loadUserProfile(userId);
+                        await createInitialGlobalChat();
+                        listenForChats(userId);
+                        startGlobalChatActivity(); // Start background chat activity
+
+                        showLoading(false);
+                    } else if (!user && !isAuthReady) {
+                        console.error("Auth failed or user logged out unexpectedly.");
+                        showInfoModal("Auth Failed", "Could not sign in. Please refresh the app. 🛑");
+                    }
+                });
+            } catch (e) {
+                console.error("Firebase Initialization Error:", e);
+                showInfoModal("Setup Error", "Failed to initialize Firebase. Check console for details. 🛠️");
+            }
+        };
+
+        // --- Event Listeners ---
+
+        const setupEventListeners = () => {
+            // Main App Buttons
+            document.getElementById('profile-btn').onclick = () => {
+                document.getElementById('profile-name').value = currentUserProfile.name;
+                document.getElementById('profile-avatar').value = currentUserProfile.avatar;
+                showModal('profile-modal');
+            };
+
+            document.getElementById('back-to-list-btn').onclick = closeChat;
+
+            document.getElementById('new-chat-btn').onclick = () => {
+                document.getElementById('new-contact-inputs').innerHTML = ''; // Clear previous inputs
+                addContactInput(); // Start with one empty contact input
+                showModal('new-chat-modal');
+            };
+
+            // Modal Handlers
+            document.getElementById('close-info-modal-btn').onclick = hideModals;
+
+            // Profile Save
+            document.getElementById('save-profile-btn').onclick = async () => {
+                const newName = document.getElementById('profile-name').value.trim();
+                const newAvatar = document.getElementById('profile-avatar').value.trim().substring(0, 2) || '❓';
+
+                if (!newName) {
+                    showInfoModal("Name Needed!", "Your stuffy needs a name! 🏷️");
+                    return;
+                }
+
+                currentUserProfile = { ...currentUserProfile, name: newName, avatar: newAvatar };
+                const userProfileDocRef = doc(db, getCollectionPath('private', 'profiles', userId), 'user');
+                await setDoc(userProfileDocRef, currentUserProfile);
+
+                document.getElementById('user-stuffy-display').textContent = `${currentUserProfile.avatar} ${currentUserProfile.name}`;
+                hideModals();
+                // Reload to update participation lists across all chats
+                window.location.reload(); 
+            };
+
+            // Message Send
+            document.getElementById('send-message-btn').onclick = () => sendMessage(document.getElementById('message-input').value);
+            document.getElementById('message-input').onkeydown = (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage(document.getElementById('message-input').value);
+                }
+            };
+            
+            // New Contact Modal Events
+            document.getElementById('add-contact-btn').onclick = () => addContactInput();
+            document.getElementById('clear-contacts-btn').onclick = () => {
+                document.getElementById('new-contact-inputs').innerHTML = '';
+                updateCreateButtonState();
+            };
+            
+            // Delegate event listener for input changes and remove button
+            document.getElementById('new-contact-inputs').addEventListener('input', (e) => {
+                if (e.target.matches('[data-field="name"]')) {
+                    // Update button state on name change
+                    updateCreateButtonState();
+                } else if (e.target.matches('[data-field="avatar"]')) {
+                    // Update button state on avatar change AND update the displayed avatar emoji
+                    const contactDiv = e.target.closest('[data-contact-id]');
+                    contactDiv.querySelector('div.text-2xl').textContent = e.target.value.trim().substring(0, 2) || '❓';
+                    updateCreateButtonState();
+                }
+            });
+            
+            document.getElementById('new-contact-inputs').addEventListener('click', (e) => {
+                if (e.target.closest('.remove-contact-btn')) {
+                    e.target.closest('[data-contact-id]').remove();
+                    updateCreateButtonState();
+                }
+            });
+
+            // New Chat Creation Logic
+            document.getElementById('create-chat-btn').onclick = async () => {
+                const container = document.getElementById('new-contact-inputs');
+                const contactDivs = Array.from(container.querySelectorAll('[data-contact-id]'));
+
+                // 1. Gather validated contacts
+                const newContacts = contactDivs.map(contactDiv => {
+                    const name = contactDiv.querySelector('[data-field="name"]').value.trim();
+                    const avatar = contactDiv.querySelector('[data-field="avatar"]').value.trim().substring(0, 2) || '❓';
+                    const id = contactDiv.getAttribute('data-contact-id');
+                    return { id, name, avatar };
+                }).filter(c => c.name.length > 0 && c.avatar.length > 0);
+
+                if (newContacts.length === 0) {
+                    showInfoModal("Select Friends!", "You must choose at least one stuffy to chat with! 🧸");
+                    return;
+                }
+                
+                hideModals();
+                showLoading(true);
+
+                try {
+                    // 2. Prepare participants and metadata
+                    const newChatParticipants = [
+                        { id: userId, name: currentUserProfile.name, avatar: currentUserProfile.avatar },
+                        ...newContacts.map(c => ({ 
+                            ...c, 
+                            isAI: true, 
+                            // Give custom stuffies a personality type to use in the AI prompt later
+                            personality: 'A custom, friendly, and very enthusiastic stuffy. Responds with warm, playful, and expressive language.'
+                        }))
+                    ];
+                    
+                    const stuffyIds = newContacts.map(c => c.id);
+
+                    let chatName;
+                    let chatAvatar;
+                    if (newContacts.length === 1) {
+                        chatName = newContacts[0].name;
+                        chatAvatar = newContacts[0].avatar;
+                    } else {
+                        chatName = newContacts.map(c => c.name.split(' ')[0]).join(', ') + ' Group';
+                        chatAvatar = '🌟';
+                    }
+
+                    // 3. Create chat document
+                    const newChatRef = doc(collection(db, getCollectionPath('public', 'stuffy_chats')));
+
+                    await setDoc(newChatRef, {
+                        name: chatName,
+                        avatar: chatAvatar,
+                        type: newContacts.length === 1 ? '1on1' : 'group',
+                        stuffyIds: stuffyIds, // Store IDs of AI participants
+                        participants: newChatParticipants,
+                        createdAt: serverTimestamp(),
+                        lastMessage: { senderName: 'System', text: 'Chat started! Say hi!', timestamp: serverTimestamp() }
+                    });
+
+                    // 4. Automatically open the new chat
+                    await openChat(newChatRef.id, newChatParticipants, stuffyIds);
+
+                } catch (e) {
+                    console.error("Error creating new chat:", e);
+                    showInfoModal("Chat Creation Failed", "We couldn't make your new chat. Try again! 😭");
+                } finally {
+                    showLoading(false);
+                }
+            };
+        };
+
+        // Start the application
+        window.onload = () => {
+            lucide.createIcons(); // Initialize Lucide icons
+            setupEventListeners();
+            initApp();
+        };
+    </script>
+
+</body></html>
