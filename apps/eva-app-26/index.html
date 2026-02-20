@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMjc1ODM2MTU4NDMzNTIyMzc4MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiI2ZjFlNWFhMDNlZTgta2F3YWlpX2Rhc2guaHRtbC0zMjYifSwiZXhwIjoxNzcxNTY2ODc0LCJpYXQiOjE3NzE1NjMyNzQsImFsZyI6IlJTMjU2In0.Y0yn-fa8KFe2sSY84TiutQ35ymw6cCFuQRIIHGAk2mH56lUi2lmY36Az9c1eLvqmYiljCGYDl4POpSHENB4At7GImCnBWm801gkzRj6N_D3vOlBZ_fAiwqhQjqFQfW-1H_ayljQO89NLUz2cQj2jSIQ_UcaB8Ch2gcH9ubNIC3_KmKyrqVqS06yVa0JGP0rDSTOGavum7t0yrlx-Vu6l7SsTxWoUnBzqDsZ2Ql0XYnwTF3DdigugzHEj0lTLsNPv_jlGLAAwAgj8EHCzoLzIPG7LrzhUls43KbEDT-PkogPJjE0dZEuR48qeG8eNXBOTfXDFRHwP8f0ICnX0eKdXbQ","6f1e5aa03ee8-kawaii_dash.html-326")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KawaiiDash: 100 Adorable Stores</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fef3f7; /* Very light pink/cream background */
+        }
+        .main-container {
+            max-width: 600px;
+        }
+        .kawaii-shadow {
+            /* Soft pink shadow */
+            box-shadow: 0 8px 15px -3px rgba(251, 207, 232, 0.7), 0 4px 6px -2px rgba(251, 207, 232, 0.5);
+        }
+        .kawaii-button {
+            transition: all 0.2s;
+        }
+        .kawaii-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(252, 165, 198, 0.5), 0 2px 4px -2px rgba(252, 165, 198, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Application Container -->
+    <div id="app" class="min-h-screen mx-auto main-container bg-white kawaii-shadow">
+        <!-- Content will be rendered here by JavaScript -->
+    </div>
+
+    <script type="text/javascript">
+        // --- Expanded Global Data Definitions (100 Stores Total) ---
+
+        const STORES = [
+            // 1-20 (Original Stores)
+            { id: 'fluffy-pancakes', name: "Fluffy Cloud Pancakes 🥞", rating: 4.8, delivery: "20-30 min", tags: ["Sweet Treats", "Breakfast", "Dessert", "Mochi"], icon: "☁️" },
+            { id: 'kitty-boba', name: "Purr-fect Boba Tea 🧋", rating: 4.9, delivery: "15-25 min", tags: ["Drinks", "Bubble Tea", "Vegan Options", "Coffee"], icon: "🐈" },
+            { id: 'star-sushi', name: "Twinkle Star Sushi 🍣", rating: 4.5, delivery: "30-45 min", tags: ["Japanese", "Lunch", "Healthy", "Fish"], icon: "✨" },
+            { id: 'chibi-burgers', name: "Chibi Burger Land 🍔", rating: 4.2, delivery: "25-35 min", tags: ["American", "Fast Food", "Fries", "Sliders"], icon: "🍟" },
+            { id: 'unicorn-donuts', name: "Unicorn Doughnut Dream 🍩", rating: 4.7, delivery: "15-25 min", tags: ["Dessert", "Baked Goods", "Sweet Treats", "Sprinkles"], icon: "🦄" },
+            { id: 'happy-ramen', name: "Happy Noodle Hut 🍜", rating: 4.6, delivery: "35-45 min", tags: ["Asian", "Noodles", "Soup", "Lunch", "Dinner"], icon: "🍜" },
+            { id: 'sparkle-cake', name: "Sparkle Cake Shop 🍰", rating: 5.0, delivery: "30-40 min", tags: ["Cakes", "Pastry", "Birthday", "Dessert"], icon: "🎂" },
+            { id: 'chili-tacos', name: "Chili Pepper Friends 🌮", rating: 4.3, delivery: "20-30 min", tags: ["Mexican", "Tacos", "Spicy", "Burritos"], icon: "🌶️" },
+            { id: 'melty-icecream', name: "Melty Friend Ice Cream 🍦", rating: 4.9, delivery: "10-20 min", tags: ["Ice Cream", "Frozen Yogurt", "Dairy", "Cones"], icon: "🍨" },
+            { id: 'tiny-pizza', name: "Tiny Slice Pizza 🍕", rating: 4.1, delivery: "40-50 min", tags: ["Pizza", "Italian", "Cheese", "Dinner"], icon: "🧀" },
+            { id: 'wiggly-dogs', name: "Wiggly Wiener Stand 🌭", rating: 4.0, delivery: "20-30 min", tags: ["Hot Dogs", "Sausage", "Street Food", "Snacks"], icon: "🎈" },
+            { id: 'sleepy-coffee', name: "Sleepy Cat Coffee ☕", rating: 4.7, delivery: "15-25 min", tags: ["Coffee", "Cafe", "Drinks", "Pastry"], icon: "🐾" },
+            { id: 'green-bunny', name: "Green Bunny Salad 🥗", rating: 4.5, delivery: "25-35 min", tags: ["Healthy", "Salad", "Vegan", "Fresh"], icon: "🐰" },
+            { id: 'sweet-cookies', name: "Sweet Smile Cookies 🍪", rating: 4.9, delivery: "20-30 min", tags: ["Cookies", "Baked Goods", "Milk", "Dessert"], icon: "🥛" },
+            { id: 'golden-fries', name: "Golden Fry Mountain 🍟", rating: 4.3, delivery: "20-30 min", tags: ["Fries", "Snacks", "Sides", "Fast Food"], icon: "🌟" },
+            { id: 'rainbow-smoothie', name: "Rainbow Smoothie Blast 🥤", rating: 4.6, delivery: "10-20 min", tags: ["Smoothie", "Juice", "Fruit", "Vegan"], icon: "🥭" },
+            { id: 'cozy-curry', name: "Cozy Curry Corner 🍛", rating: 4.4, delivery: "30-40 min", tags: ["Indian", "Spicy", "Rice", "Dinner"], icon: "🔥" },
+            { id: 'twisty-pretzels', name: "Twisty Treat Pretzels 🥨", rating: 4.2, delivery: "20-30 min", tags: ["Snacks", "Salty", "Baked Goods", "Soft"], icon: "🥐" },
+            { id: 'heart-waffles', name: "Heart Waffle House ❤️", rating: 4.8, delivery: "25-35 min", tags: ["Waffles", "Brunch", "Sweet Treats", "Syrup"], icon: "🧇" },
+            { id: 'pop-pop-cloud', name: "Pop Pop Cloud Popcorn 🍿", rating: 4.1, delivery: "15-25 min", tags: ["Popcorn", "Snacks", "Movie Night", "Salty"], icon: "☁️" },
+            
+            // 21-100 (New Stores)
+            { id: 'store-21', name: "Cheesy Cloud Mac & Cheese 🧀", rating: 4.5, delivery: "25-35 min", tags: ["Comfort Food", "Pasta", "Dinner", "Lunch"], icon: "☁️" },
+            { id: 'store-22', name: "Baby Bear Bagels 🥯", rating: 4.8, delivery: "15-25 min", tags: ["Breakfast", "Baked Goods", "Sandwich", "Cream Cheese"], icon: "🐻" },
+            { id: 'store-23', name: "Dragon Breath Korean BBQ 🐉", rating: 4.6, delivery: "40-50 min", tags: ["Korean", "BBQ", "Dinner", "Spicy"], icon: "🥢" },
+            { id: 'store-24', name: "Starfish Seafood Shack 🦞", rating: 4.7, delivery: "30-40 min", tags: ["Seafood", "Dinner", "Fish", "Grilled"], icon: "🌊" },
+            { id: 'store-25', name: "Little Piggy Pulled Pork 🐷", rating: 4.4, delivery: "25-35 min", tags: ["BBQ", "Sandwich", "American", "Smoked"], icon: "🍖" },
+            { id: 'store-26', name: "Jewel Box Gelato 💎", rating: 4.9, delivery: "10-20 min", tags: ["Dessert", "Italian", "Ice Cream", "Frozen"], icon: "🍦" },
+            { id: 'store-27', name: "Tiny Teacup Dim Sum 🥢", rating: 4.5, delivery: "35-45 min", tags: ["Chinese", "Snacks", "Lunch", "Dumplings"], icon: "🍵" },
+            { id: 'store-28', name: "Happy Hippo Hummus 🧆", rating: 4.6, delivery: "20-30 min", tags: ["Middle Eastern", "Vegan", "Dips", "Pita"], icon: "🌿" },
+            { id: 'store-29', name: "Foxy Falafel Fun 🦊", rating: 4.3, delivery: "25-35 min", tags: ["Mediterranean", "Vegetarian", "Wraps", "Lunch"], icon: "🥙" },
+            { id: 'store-30', name: "Sweet Serenade Scones 🎶", rating: 4.7, delivery: "15-25 min", tags: ["Tea Time", "Baked Goods", "British", "Dessert"], icon: "🍓" },
+            { id: 'store-31', name: "Bouncing Bao Buns 🥟", rating: 4.5, delivery: "30-40 min", tags: ["Chinese", "Steamed", "Snacks", "Pork"], icon: "🥢" },
+            { id: 'store-32', name: "Smiling Steakhouse Grill 🥩", rating: 4.8, delivery: "40-50 min", tags: ["Steak", "Dinner", "American", "Meat"], icon: "🔥" },
+            { id: 'store-33', name: "Pink Panda Pho 🍜", rating: 4.4, delivery: "35-45 min", tags: ["Vietnamese", "Soup", "Noodles", "Lunch"], icon: "🌸" },
+            { id: 'store-34', name: "Fluffy French Crepes 🇫🇷", rating: 4.7, delivery: "20-30 min", tags: ["French", "Dessert", "Brunch", "Sweet"], icon: "🧇" },
+            { id: 'store-35', name: "Whale Watching Wraps 🐋", rating: 4.3, delivery: "15-25 min", tags: ["Healthy", "Lunch", "Wraps", "Chicken"], icon: "🌯" },
+            { id: 'store-36', name: "Tiny Turtle Tapas 🇪🇸", rating: 4.6, delivery: "30-40 min", tags: ["Spanish", "Appetizers", "Dinner", "Small Plates"], icon: "🍤" },
+            { id: 'store-37', name: "Sunshine Smoothie Bowls ☀️", rating: 4.9, delivery: "10-20 min", tags: ["Healthy", "Breakfast", "Fruit", "Superfood"], icon: "🥝" },
+            { id: 'store-38', name: "Little Lion Lasagna 🇮🇹", rating: 4.5, delivery: "40-50 min", tags: ["Italian", "Pasta", "Dinner", "Cheese"], icon: "🍝" },
+            { id: 'store-39', name: "Forest Gnome Goulash 🇭🇺", rating: 4.2, delivery: "35-45 min", tags: ["Hungarian", "Soup", "Stew", "Comfort Food"], icon: "🍲" },
+            { id: 'store-40', name: "Kitten Kebab Corner 🍢", rating: 4.4, delivery: "25-35 min", tags: ["Turkish", "Meat", "Grilled", "Lunch"], icon: "🥙" },
+            { id: 'store-41', name: "Friendly Frog Fried Rice 🐸", rating: 4.3, delivery: "20-30 min", tags: ["Chinese", "Rice", "Dinner", "Vegetarian"], icon: "🍚" },
+            { id: 'store-42', name: "Jellyfish Juice Bar 🍹", rating: 4.8, delivery: "10-20 min", tags: ["Juice", "Fresh", "Drinks", "Healthy"], icon: "💦" },
+            { id: 'store-43', name: "Little Llama Linguine 🇵🇪", rating: 4.6, delivery: "30-40 min", tags: ["Peruvian", "Pasta", "Seafood", "Dinner"], icon: "🦙" },
+            { id: 'store-44', name: "Muffin Mouse Bakery 🧁", rating: 4.9, delivery: "15-25 min", tags: ["Baked Goods", "Breakfast", "Dessert", "Muffins"], icon: "🐭" },
+            { id: 'store-45', name: "Cactus Cupcakes 🌵", rating: 4.5, delivery: "20-30 min", tags: ["Cupcakes", "Dessert", "Cakes", "Sweet"], icon: "🎂" },
+            { id: 'store-46', name: "Penguin Poke Bowls 🐧", rating: 4.7, delivery: "25-35 min", tags: ["Hawaiian", "Healthy", "Fish", "Lunch"], icon: "🐠" },
+            { id: 'store-47', name: "Bunny Banh Mi Bites 🇻🇳", rating: 4.4, delivery: "15-25 min", tags: ["Vietnamese", "Sandwich", "Lunch", "Pate"], icon: "🥖" },
+            { id: 'store-48', name: "Koala Kettle Corn 🐨", rating: 4.1, delivery: "10-20 min", tags: ["Snacks", "Sweet", "Salty", "Popcorn"], icon: "🍿" },
+            { id: 'store-49', name: "Poodle Paella Place 🥘", rating: 4.5, delivery: "40-50 min", tags: ["Spanish", "Rice", "Seafood", "Dinner"], icon: "🇪🇸" },
+            { id: 'store-50', name: "Happy Honeypot Tea 🍯", rating: 4.8, delivery: "15-25 min", tags: ["Tea", "Hot Drinks", "Honey", "Cafe"], icon: "🐝" },
+            { id: 'store-51', name: "Grinning Greek Gyros 🇬🇷", rating: 4.3, delivery: "25-35 min", tags: ["Greek", "Lunch", "Wraps", "Lamb"], icon: "🥙" },
+            { id: 'store-52', name: "Cheerful Chocolate Co. 🍫", rating: 5.0, delivery: "10-20 min", tags: ["Chocolate", "Dessert", "Truffles", "Sweet Treats"], icon: "🍬" },
+            { id: 'store-53', name: "Silly Sausage Stand 🇩🇪", rating: 4.2, delivery: "20-30 min", tags: ["German", "Sausage", "Snacks", "Mustard"], icon: "🍺" },
+            { id: 'store-54', name: "Rainbow Rice Balls 🍙", rating: 4.6, delivery: "15-25 min", tags: ["Japanese", "Snacks", "Rice", "Lunch"], icon: "🍣" },
+            { id: 'store-55', name: "Tiny Taco Truck 🚚", rating: 4.4, delivery: "20-30 min", tags: ["Mexican", "Street Food", "Lunch", "Carnitas"], icon: "🌶️" },
+            { id: 'store-56', name: "Cloud Nine Churros ☁️", rating: 4.9, delivery: "15-25 min", tags: ["Dessert", "Spanish", "Fried Dough", "Cinnamon"], icon: "🍩" },
+            { id: 'store-57', name: "Dino Drumsticks 🍗", rating: 4.1, delivery: "30-40 min", tags: ["Chicken", "Fried", "American", "Dinner"], icon: "🦴" },
+            { id: 'store-58', name: "Sweet Dreams Slushies ❄️", rating: 4.5, delivery: "10-20 min", tags: ["Drinks", "Frozen", "Sweet", "Summer"], icon: "🍧" },
+            { id: 'store-59', name: "Octopus Oysters 🐙", rating: 4.7, delivery: "35-45 min", tags: ["Seafood", "Raw Bar", "Luxury", "Dinner"], icon: "🍾" },
+            { id: 'store-60', name: "Panda Potstickers 🐼", rating: 4.3, delivery: "25-35 min", tags: ["Chinese", "Dumplings", "Snacks", "Pork"], icon: "🥟" },
+            { id: 'store-61', name: "Honey Bunny Hotcakes 🥞", rating: 4.8, delivery: "20-30 min", tags: ["Breakfast", "Brunch", "Sweet", "Pancakes"], icon: "🍯" },
+            { id: 'store-62', name: "Magical Mushroom Pizza 🍄", rating: 4.4, delivery: "40-50 min", tags: ["Pizza", "Vegetarian", "Italian", "Dinner"], icon: "🍕" },
+            { id: 'store-63', name: "Sunny Side Up Eggs 🍳", rating: 4.6, delivery: "15-25 min", tags: ["Breakfast", "Brunch", "Eggs", "Omelets"], icon: "🥓" },
+            { id: 'store-64', name: "Cheeky Chili Con Carne 🔥", rating: 4.2, delivery: "30-40 min", tags: ["Tex-Mex", "Spicy", "Comfort Food", "Stew"], icon: "🍲" },
+            { id: 'store-65', name: "Gooey Grilled Cheese 🥪", rating: 4.7, delivery: "20-30 min", tags: ["Sandwich", "Lunch", "Comfort Food", "Cheese"], icon: "🧀" },
+            { id: 'store-66', name: "Wobbly Watermelon Smoothies 🍉", rating: 4.9, delivery: "10-20 min", tags: ["Smoothie", "Fruit", "Vegan", "Drinks"], icon: "🥤" },
+            { id: 'store-67', name: "Fluffy Flan Factory 🍮", rating: 4.5, delivery: "25-35 min", tags: ["Dessert", "Latin", "Custard", "Sweet Treats"], icon: "🍮" },
+            { id: 'store-68', name: "Little Lamb Curry 🇮🇳", rating: 4.3, delivery: "35-45 min", tags: ["Indian", "Spicy", "Dinner", "Lamb"], icon: "🍚" },
+            { id: 'store-69', name: "Smiling Shrimp Rolls 🍤", rating: 4.6, delivery: "20-30 min", tags: ["Seafood", "Vietnamese", "Snacks", "Fresh"], icon: "🥢" },
+            { id: 'store-70', name: "Sweet Potato Palooza 🍠", rating: 4.1, delivery: "25-35 min", tags: ["Vegetarian", "Sides", "Fries", "Healthy"], icon: "🥔" },
+            { id: 'store-71', name: "Cloud Croissant Cafe 🥐", rating: 4.8, delivery: "15-25 min", tags: ["Baked Goods", "French", "Breakfast", "Pastry"], icon: "☕" },
+            { id: 'store-72', name: "Dapper Duck Donuts 🦆", rating: 4.7, delivery: "20-30 min", tags: ["Donuts", "Dessert", "Sweet Treats", "Coffee"], icon: "🍩" },
+            { id: 'store-73', name: "Grumpy Goat Greek Salad 🐐", rating: 4.4, delivery: "20-30 min", tags: ["Greek", "Salad", "Healthy", "Feta"], icon: "🥗" },
+            { id: 'store-74', name: "Polite Pirogi Palace 🇵🇱", rating: 4.5, delivery: "30-40 min", tags: ["Polish", "Dumplings", "Comfort Food", "Potato"], icon: "🥟" },
+            { id: 'store-75', name: "Happy Hearth Bread 🍞", rating: 4.9, delivery: "10-20 min", tags: ["Baked Goods", "Bread", "Sandwich", "Fresh"], icon: "🧈" },
+            { id: 'store-76', name: "Witch's Brew Soup 🍵", rating: 4.3, delivery: "25-35 min", tags: ["Soup", "Comfort Food", "Lunch", "Healthy"], icon: "🎃" },
+            { id: 'store-77', name: "Singing Samosas 🎶", rating: 4.6, delivery: "20-30 min", tags: ["Indian", "Snacks", "Vegetarian", "Spicy"], icon: "🌶️" },
+            { id: 'store-78', name: "Tiny Treehouse Tarts 🥧", rating: 4.8, delivery: "15-25 min", tags: ["Dessert", "Baked Goods", "Fruit", "Pastry"], icon: "🍎" },
+            { id: 'store-79', name: "Little Lightning Lemonade ⚡", rating: 4.9, delivery: "10-20 min", tags: ["Drinks", "Lemonade", "Fresh", "Summer"], icon: "🍋" },
+            { id: 'store-80', name: "Cheesy Chalupa Chasers 🔔", rating: 4.2, delivery: "25-35 min", tags: ["Mexican", "Fast Food", "Crunchy", "Lunch"], icon: "🌮" },
+            { id: 'store-81', name: "Magical Meatball Manor 🇮🇹", rating: 4.5, delivery: "30-40 min", tags: ["Italian", "Meatballs", "Dinner", "Pasta"], icon: "🍝" },
+            { id: 'store-82', name: "Star Dust Smoothies ✨", rating: 4.7, delivery: "10-20 min", tags: ["Smoothie", "Protein", "Healthy", "Fruit"], icon: "🍓" },
+            { id: 'store-83', name: "Chubby Chimichangas 🌯", rating: 4.4, delivery: "25-35 min", tags: ["Mexican", "Fried", "Dinner", "Burritos"], icon: "🔥" },
+            { id: 'store-84', name: "Gummy Bear Gnocchi 🐻", rating: 4.1, delivery: "35-45 min", tags: ["Italian", "Pasta", "Potato", "Comfort Food"], icon: "🥔" },
+            { id: 'store-85', name: "Penguin Pasta Pies 🇦🇺", rating: 4.6, delivery: "30-40 min", tags: ["Australian", "Pies", "Meat", "Savory"], icon: "🥧" },
+            { id: 'store-86', name: "Wiggle Worm Wontons 🐛", rating: 4.3, delivery: "20-30 min", tags: ["Chinese", "Dumplings", "Soup", "Pork"], icon: "🍜" },
+            { id: 'store-87', name: "Dreamy Dip Station 🥣", rating: 4.8, delivery: "15-25 min", tags: ["Dips", "Appetizers", "Snacks", "Spreads"], icon: "🥨" },
+            { id: 'store-88', name: "Sassy Sausage Rolls 🇬🇧", rating: 4.5, delivery: "20-30 min", tags: ["British", "Snacks", "Pastry", "Lunch"], icon: "👑" },
+            { id: 'store-89', name: "Little Labyrinth Lobster 🦞", rating: 4.9, delivery: "40-50 min", tags: ["Seafood", "Luxury", "Dinner", "Butter"], icon: "💰" },
+            { id: 'store-90', name: "Honey Pot Hot Dogs 🌭", rating: 4.2, delivery: "20-30 min", tags: ["Hot Dogs", "Snacks", "American", "Lunch"], icon: "🍯" },
+            { id: 'store-91', name: "Cherry Blossom Cheesecake 🌸", rating: 4.8, delivery: "25-35 min", tags: ["Dessert", "Cheesecake", "Cake", "Sweet Treats"], icon: "🍰" },
+            { id: 'store-92', name: "Playful Poutine Place 🇨🇦", rating: 4.6, delivery: "30-40 min", tags: ["Canadian", "Fries", "Cheese Curds", "Gravy"], icon: "🍁" },
+            { id: 'store-93', name: "Breezy Burrito Bar 🌯", rating: 4.4, delivery: "20-30 min", tags: ["Mexican", "Burritos", "Lunch", "Chicken"], icon: "🥑" },
+            { id: 'store-94', name: "Cute Kitten Kebabs 🍢", rating: 4.5, delivery: "35-45 min", tags: ["Middle Eastern", "Meat", "Grilled", "Dinner"], icon: "🐾" },
+            { id: 'store-95', name: "Sweet Swirl Cinnabuns 🌀", rating: 4.7, delivery: "15-25 min", tags: ["Baked Goods", "Cinnamon", "Breakfast", "Dessert"], icon: "🍞" },
+            { id: 'store-96', name: "Toasty Tofu Treats 🥢", rating: 4.3, delivery: "25-35 min", tags: ["Vegan", "Asian", "Tofu", "Healthy"], icon: "🌱" },
+            { id: 'store-97', name: "Waffle Wonderland 🧇", rating: 4.8, delivery: "20-30 min", tags: ["Waffles", "Dessert", "Breakfast", "Sweet"], icon: "🍓" },
+            { id: 'store-98', name: "Pebble Pot Pie Shop 🥧", rating: 4.5, delivery: "35-45 min", tags: ["Pies", "Comfort Food", "Chicken", "Dinner"], icon: "🍗" },
+            { id: 'store-99', name: "Twinkling Toasties 🥪", rating: 4.6, delivery: "15-25 min", tags: ["Sandwich", "Grilled", "Lunch", "Cheese"], icon: "✨" },
+            { id: 'store-100', name: "Sparkle Spud Station 🥔", rating: 4.7, delivery: "20-30 min", tags: ["Potato", "Sides", "Baked", "Comfort Food"], icon: "🍠" }
+        ];
+
+        const MENU = {
+            // Original Menus (Item IDs 1-42)
+            'fluffy-pancakes': [
+                { id: 1, name: "Rainbow Mochi Pancakes", price: 12.99, desc: "Stacked pancakes topped with colorful mochi and whipped cream.", emoji: "🌈" },
+                { id: 2, name: "Teddy Bear Hot Cocoa", price: 5.50, desc: "Rich hot cocoa with a tiny teddy marshmallow floating on top.", emoji: "🐻" },
+                { id: 3, name: "Strawberry Bunny Waffles", price: 11.50, desc: "Waffles shaped like bunnies, drizzled with fresh strawberry sauce.", emoji: "🍓" }
+            ],
+            'kitty-boba': [
+                { id: 4, name: "Pawsitive Taro Milk Tea", price: 6.25, desc: "Classic taro flavor with chewy boba, served with a cat paw cup sleeve.", emoji: "🐾" },
+                { id: 5, name: "Shy Peach Fruit Tea", price: 5.99, desc: "Iced green tea infused with sweet peach, very refreshing!", emoji: "🍑" },
+                { id: 6, name: "Midnight Sparkle Espresso", price: 7.00, desc: "Cold brew with sweet cream foam and edible glitter.", emoji: "💫" }
+            ],
+            'star-sushi': [
+                { id: 7, name: "Cute Roll Set (8pc)", price: 15.99, desc: "Tuna and avocado rolls decorated with tiny vegetable hearts.", emoji: "❤️" },
+                { id: 8, name: "Sparkle Salmon Bowl", price: 18.50, desc: "Fresh salmon over rice with flying fish roe and a sweet soy glaze.", emoji: "🌟" }
+            ],
+            'chibi-burgers': [
+                { id: 9, name: "Mini Macaron Sliders (3)", price: 10.99, desc: "Three tiny, perfectly portioned cheeseburger sliders.", emoji: "🍔" },
+                { id: 10, name: "Squishy Sweet Potato Fries", price: 4.99, desc: "Waffle-cut sweet potato fries served with marshmallow dipping sauce.", emoji: "🍠" }
+            ],
+            'unicorn-donuts': [
+                { id: 11, name: "Galaxy Glazed Donut", price: 3.50, desc: "A soft donut topped with shimmer glaze and star sprinkles.", emoji: "🌌" },
+                { id: 12, name: "Mini Macaron Dozen", price: 18.00, desc: "Twelve colorful, chewy macaron kisses.", emoji: "🇫🇷" },
+            ],
+            'happy-ramen': [
+                { id: 13, name: "Smiling Shoyu Ramen", price: 14.99, desc: "Savory broth with bouncy noodles and a perfect boiled egg.", emoji: "😊" },
+                { id: 14, name: "Gyoza Pockets (4pc)", price: 6.50, desc: "Crispy fried dumplings with a juicy pork filling.", emoji: "🥟" },
+            ],
+            'sparkle-cake': [
+                { id: 15, name: "Confetti Rainbow Slice", price: 8.50, desc: "Tall slice of vanilla cake with layered frosting and edible glitter.", emoji: "🥳" },
+                { id: 16, name: "Tiny Tiramisu Cup", price: 7.99, desc: "Espresso-soaked ladyfingers and sweet mascarpone in a cup.", emoji: "☕" },
+            ],
+            'chili-tacos': [
+                { id: 17, name: "Happy Chicken Taco (3)", price: 10.50, desc: "Small corn tortillas filled with grilled chicken and fresh salsa.", emoji: "🐔" },
+                { id: 18, name: "Guacamole & Chip Dip", price: 6.99, desc: "Fresh avocado dip served with colorful tortilla chips.", emoji: "🥑" },
+            ],
+            'melty-icecream': [
+                { id: 19, name: "Berry Cute Swirl Cone", price: 5.00, desc: "Strawberry and vanilla swirl soft serve in a pink cone.", emoji: "🍓" },
+                { id: 20, name: "Chocolate Fudge Sundae", price: 7.50, desc: "Three scoops of vanilla, hot fudge, and whipped cream.", emoji: "🍫" },
+            ],
+            'tiny-pizza': [
+                { id: 21, name: "Little Pepperoni Pie", price: 11.99, desc: "A personal 6-inch pizza with tiny slices of pepperoni.", emoji: "💖" },
+                { id: 22, name: "Mini Cheese Breadsticks", price: 5.99, desc: "Cheesy, garlic-buttery breadsticks for dipping.", emoji: "🥖" },
+            ],
+            'wiggly-dogs': [
+                { id: 23, name: "Mini Corn Dog Trio", price: 8.99, desc: "Three adorable, deep-fried corn dogs on sticks.", emoji: "🍡" },
+                { id: 24, name: "Curly Fries Side", price: 4.50, desc: "Perfectly seasoned, crispy curly fries.", emoji: "🌀" },
+            ],
+            'sleepy-coffee': [
+                { id: 25, name: "Cat Paw Latte", price: 5.50, desc: "A foamy latte with a cat paw design made in the milk foam.", emoji: "🐾" },
+                { id: 26, name: "Chocolate Croissant", price: 3.99, desc: "Flaky French pastry filled with rich dark chocolate.", emoji: "🥐" },
+            ],
+            'green-bunny': [
+                { id: 27, name: "Hop-to-It Chicken Salad", price: 13.99, desc: "Grilled chicken, mixed greens, carrots, and a light ranch dressing.", emoji: "🥕" },
+                { id: 28, name: "Avocado Toast Points", price: 7.50, desc: "Whole grain toast topped with mashed avocado and sea salt.", emoji: "🍞" },
+            ],
+            'sweet-cookies': [
+                { id: 29, name: "Giant Chocolate Chip Cookie", price: 4.00, desc: "A huge, warm, gooey classic cookie.", emoji: "🍪" },
+                { id: 30, name: "Oatmeal Raisin Comfort Cookie", price: 3.50, desc: "Soft oatmeal cookie with plump raisins.", emoji: "🌾" },
+            ],
+            'golden-fries': [
+                { id: 31, name: "Truffle Parmesan Fries", price: 7.99, desc: "Premium fries tossed in truffle oil and parmesan cheese.", emoji: "🍄" },
+                { id: 32, name: "Spicy Ketchup Dip", price: 1.00, desc: "Our signature house-made spicy ketchup.", emoji: "🌶️" },
+            ],
+            'rainbow-smoothie': [
+                { id: 33, name: "Magic Mango Smoothie", price: 6.99, desc: "Mango, banana, and coconut milk blended to perfection.", emoji: "💛" },
+                { id: 34, name: "Kale Power Green Juice", price: 7.50, desc: "Spinach, kale, apple, and ginger juice for a health kick.", emoji: "🔋" },
+            ],
+            'cozy-curry': [
+                { id: 35, name: "Gentle Butter Chicken Curry", price: 15.99, desc: "Creamy, mild butter chicken served with jasmine rice.", emoji: "🍚" },
+                { id: 36, name: "Fluffy Garlic Naan", price: 3.50, desc: "Warm, buttery flatbread with garlic.", emoji: "🫓" },
+            ],
+            'twisty-pretzels': [
+                { id: 37, name: "Cinnamon Sugar Pretzel", price: 4.50, desc: "Soft pretzel coated in cinnamon sugar, served warm.", emoji: "🍂" },
+                { id: 38, name: "Cheese Dipping Sauce", price: 1.50, desc: "Warm, velvety cheddar cheese sauce.", emoji: "🧀" },
+            ],
+            'heart-waffles': [
+                { id: 39, name: "Blueberry Bliss Waffles", price: 10.99, desc: "Crispy heart-shaped waffles topped with fresh blueberries.", emoji: "💙" },
+                { id: 40, name: "Maple Syrup Side", price: 1.00, desc: "Pure, high-quality maple syrup.", emoji: "🍁" },
+            ],
+            'pop-pop-cloud': [
+                { id: 41, name: "Caramel Cloud Popcorn", price: 5.99, desc: "Airy popcorn coated in sweet, sticky caramel.", emoji: "☁️" },
+                { id: 42, name: "Cheesy Dust Popcorn", price: 5.99, desc: "Popcorn dusted with a savory cheddar seasoning.", emoji: "🧀" },
+            ],
+
+            // New Menus (Item IDs 43-202)
+            'store-21': [
+                { id: 43, name: "Truffle Mac & Cheese", price: 14.99, desc: "Creamy mac with truffle oil and toasted breadcrumbs.", emoji: "🍄" },
+                { id: 44, name: "Spicy Jalapeno Mac Bites", price: 7.99, desc: "Deep-fried mac and cheese balls with a kick.", emoji: "🔥" },
+            ],
+            'store-22': [
+                { id: 45, name: "Everything Bagel w/ Lox Spread", price: 11.50, desc: "Toasted everything bagel with smoked salmon cream cheese.", emoji: "🐟" },
+                { id: 46, name: "Rainbow Swirl Bagel", price: 3.50, desc: "A colorful bagel, best enjoyed toasted with butter.", emoji: "🌈" },
+            ],
+            'store-23': [
+                { id: 47, name: "Sweet Galbi Short Ribs", price: 24.99, desc: "Marinated and grilled Korean short ribs.", emoji: "🍖" },
+                { id: 48, name: "Spicy Kimchi Fried Rice", price: 13.50, desc: "Stir-fried rice with kimchi, pork belly, and a fried egg.", emoji: "🍚" },
+            ],
+            'store-24': [
+                { id: 49, name: "Mini Crab Cakes w/ Aioli", price: 16.99, desc: "Three small, crispy crab cakes served with lemon aioli.", emoji: "🦀" },
+                { id: 50, name: "Lemon Garlic Shrimp Scampi", price: 19.50, desc: "Shrimp sauteed in butter, garlic, and lemon over rice.", emoji: "🍤" },
+            ],
+            'store-25': [
+                { id: 51, name: "BBQ Pulled Pork Slider", price: 9.99, desc: "Tender pulled pork tossed in BBQ sauce on a brioche bun.", emoji: "🐖" },
+                { id: 52, name: "Crispy Onion Rings", price: 4.99, desc: "Golden, thick-cut onion rings.", emoji: "🧅" },
+            ],
+            'store-26': [
+                { id: 53, name: "Pistachio Dream Gelato", price: 6.50, desc: "Rich Italian pistachio gelato.", emoji: "💚" },
+                { id: 54, name: "Dark Chocolate Sorbetto", price: 5.99, desc: "A dairy-free, intense dark chocolate frozen treat.", emoji: "🍫" },
+            ],
+            'store-27': [
+                { id: 55, name: "Har Gow (Shrimp Dumplings)", price: 8.99, desc: "Steamed shrimp dumplings with translucent wrappers.", emoji: "🍤" },
+                { id: 56, name: "Steamed BBQ Pork Buns", price: 7.50, desc: "Soft, fluffy buns filled with sweet, savory pork.", emoji: "🐷" },
+            ],
+            'store-28': [
+                { id: 57, name: "Classic Chickpea Hummus Dip", price: 5.99, desc: "Creamy hummus served with warm pita bread.", emoji: "🧆" },
+                { id: 58, name: "Cucumber & Carrot Sticks", price: 3.50, desc: "Fresh vegetable sticks for healthy dipping.", emoji: "🥕" },
+            ],
+            'store-29': [
+                { id: 59, name: "Falafel Sandwich Wrap", price: 10.99, desc: "Crispy falafel balls wrapped with vegetables and tahini.", emoji: "🥙" },
+                { id: 60, name: "Tabbouleh Salad Side", price: 4.50, desc: "Parsley, tomato, mint, and bulgur wheat salad.", emoji: "🥗" },
+            ],
+            'store-30': [
+                { id: 61, name: "Classic Cream Scones (2)", price: 7.00, desc: "Two warm scones, light and fluffy.", emoji: "🧈" },
+                { id: 62, name: "Raspberry Jam & Clotted Cream", price: 2.50, desc: "The perfect accompaniments for your scones.", emoji: "🍓" },
+            ],
+            'store-31': [
+                { id: 63, name: "Char Siu Pork Bao", price: 8.99, desc: "Two steamed buns filled with sweet roasted pork.", emoji: "🥢" },
+                { id: 64, name: "Vegetable Shiitake Bao", price: 7.99, desc: "Two steamed buns filled with mushroom and veggies.", emoji: "🍄" },
+            ],
+            'store-32': [
+                { id: 65, name: "Petite Filet Mignon", price: 29.99, desc: "Tender 6oz filet, cooked to perfection.", emoji: "🥩" },
+                { id: 66, name: "Garlic Mashed Potatoes", price: 6.00, desc: "Creamy potatoes whipped with roasted garlic.", emoji: "🥔" },
+            ],
+            'store-33': [
+                { id: 67, name: "Beef Noodle Pho (Large)", price: 15.99, desc: "Rich beef broth with rice noodles and tender slices of beef.", emoji: "🐄" },
+                { id: 68, name: "Veggie Spring Rolls", price: 6.99, desc: "Crispy fried rolls filled with glass noodles and vegetables.", emoji: "🥕" },
+            ],
+            'store-34': [
+                { id: 69, name: "Nutella & Banana Crepe", price: 10.50, desc: "Thin French crepe filled with Nutella spread and fresh bananas.", emoji: "🍫" },
+                { id: 70, name: "Ham & Cheese Savory Crepe", price: 11.99, desc: "Savory crepe with melted Swiss cheese and sliced ham.", emoji: "🧀" },
+            ],
+            'store-35': [
+                { id: 71, name: "Mediterranean Veggie Wrap", price: 12.50, desc: "Feta, olives, cucumber, and greens in a whole wheat wrap.", emoji: "🌿" },
+                { id: 72, name: "Caesar Chicken Wrap", price: 13.99, desc: "Grilled chicken, romaine, parmesan, and Caesar dressing.", emoji: "🐔" },
+            ],
+            'store-36': [
+                { id: 73, name: "Patatas Bravas", price: 7.50, desc: "Crispy fried potatoes with a spicy tomato sauce.", emoji: "🥔" },
+                { id: 74, name: "Gambas al Ajillo (Garlic Shrimp)", price: 14.00, desc: "Shrimp sizzling in garlic and olive oil.", emoji: "🍤" },
+            ],
+            'store-37': [
+                { id: 75, name: "Acai Berry Bowl", price: 11.99, desc: "Frozen acai topped with granola, honey, and fresh berries.", emoji: "🍇" },
+                { id: 76, name: "Green Detox Bowl", price: 10.99, desc: "Spinach, banana, and chia seeds blended into a vibrant bowl.", emoji: "🥬" },
+            ],
+            'store-38': [
+                { id: 77, name: "Classic Beef Lasagna Slice", price: 16.99, desc: "Layers of pasta, seasoned beef, ricotta, and mozzarella.", emoji: "🍝" },
+                { id: 78, name: "Side Salad w/ Balsamic", price: 4.50, desc: "Mixed greens with tomatoes and a balsamic vinaigrette.", emoji: "🥗" },
+            ],
+            'store-39': [
+                { id: 79, name: "Hearty Beef Goulash Soup", price: 14.50, desc: "Slow-cooked beef and potato soup seasoned with paprika.", emoji: "🍲" },
+                { id: 80, name: "Crusty Bread Roll", price: 2.00, desc: "A perfect roll for soaking up the soup.", emoji: "🥖" },
+            ],
+            'store-40': [
+                { id: 81, name: "Chicken Shish Kebab Plate", price: 17.99, desc: "Grilled chicken skewers served with rice and a side of salad.", emoji: "🍢" },
+                { id: 82, name: "Hummus & Pita Side", price: 6.99, desc: "Chickpea dip with warm flatbread.", emoji: "🧆" },
+            ],
+            'store-41': [
+                { id: 83, name: "Pineapple Chicken Fried Rice", price: 13.50, desc: "Sweet and savory fried rice served inside a pineapple boat.", emoji: "🍍" },
+                { id: 84, name: "Egg Drop Soup", price: 4.00, desc: "Light and comforting soup with wispy eggs.", emoji: "🥚" },
+            ],
+            'store-42': [
+                { id: 85, name: "Pure Orange Immunity Juice", price: 7.50, desc: "Fresh-pressed orange, carrot, and ginger juice.", emoji: "🍊" },
+                { id: 86, name: "Green Apple & Ginger Shot", price: 4.00, desc: "A small, potent shot for energy.", emoji: "🍏" },
+            ],
+            'store-43': [
+                { id: 87, name: "Shrimp Scampi Linguine", price: 18.99, desc: "Linguine tossed with shrimp in a light butter and wine sauce.", emoji: "🍝" },
+                { id: 88, name: "Garlic Bread Knots", price: 5.50, desc: "Soft bread knots brushed with garlic butter.", emoji: "🥖" },
+            ],
+            'store-44': [
+                { id: 89, name: "Lemon Poppy Seed Muffin", price: 3.50, desc: "Moist muffin with a bright lemon glaze.", emoji: "🍋" },
+                { id: 90, name: "Double Chocolate Chip Muffin", price: 3.99, desc: "Decadent chocolate muffin with chocolate chips.", emoji: "🍫" },
+            ],
+            'store-45': [
+                { id: 91, name: "Red Velvet Mini-Cupcake", price: 3.00, desc: "A bite-sized red velvet cupcake with cream cheese frosting.", emoji: "🍰" },
+                { id: 92, name: "Key Lime Pie Cupcake", price: 3.50, desc: "Tangy lime cupcake with a graham cracker base.", emoji: "🥧" },
+            ],
+            'store-46': [
+                { id: 93, name: "Tuna Poke Bowl", price: 16.50, desc: "Diced tuna marinated in soy, served over rice with avocado.", emoji: "🐟" },
+                { id: 94, name: "Salmon Poke Bowl", price: 17.50, desc: "Diced salmon with spicy mayo, edamame, and cucumber.", emoji: "🍣" },
+            ],
+            'store-47': [
+                { id: 95, name: "Classic Pork Banh Mi", price: 10.99, desc: "Pork belly, pate, pickled vegetables, and cilantro on a baguette.", emoji: "🇻🇳" },
+                { id: 96, name: "Tofu Veggie Banh Mi", price: 9.99, desc: "Crispy tofu with pickled veggies on a French baguette.", emoji: "🌱" },
+            ],
+            'store-48': [
+                { id: 97, name: "Classic Sweet & Salty Corn", price: 4.50, desc: "Perfectly balanced popcorn, great for snacking.", emoji: "🍿" },
+                { id: 98, name: "Cheddar Cheese Kettle Corn", price: 5.50, desc: "Popcorn dusted with a tangy, cheesy seasoning.", emoji: "🧀" },
+            ],
+            'store-49': [
+                { id: 99, name: "Valencian Paella (Small)", price: 21.99, desc: "Saffron rice cooked with chicken, chorizo, and vegetables.", emoji: "🥘" },
+                { id: 100, name: "Grilled Asparagus Side", price: 6.00, desc: "Tender asparagus spears, lightly seasoned.", emoji: "🌿" },
+            ],
+            'store-50': [
+                { id: 101, name: "Warm Honey Black Tea", price: 4.50, desc: "A comforting cup of black tea sweetened with local honey.", emoji: "🍯" },
+                { id: 102, name: "Iced Mango Passion Tea", price: 5.50, desc: "A refreshing iced tea with tropical fruit flavors.", emoji: "🥭" },
+            ],
+            'store-51': [
+                { id: 103, name: "Lamb & Beef Gyro Wrap", price: 13.99, desc: "Sliced meat wrapped in pita with tzatziki, tomato, and onion.", emoji: "🇬🇷" },
+                { id: 104, name: "Feta & Olive Side Salad", price: 5.99, desc: "A small salad with Greek dressing, feta cheese, and olives.", emoji: "🫒" },
+            ],
+            'store-52': [
+                { id: 105, name: "Dark Chocolate Truffle (4pc)", price: 12.00, desc: "Hand-rolled dark chocolate truffles, rich and intense.", emoji: "🤎" },
+                { id: 106, name: "Hot Cocoa Bomb", price: 6.50, desc: "A chocolate sphere filled with cocoa mix and marshmallows.", emoji: "💣" },
+            ],
+            'store-53': [
+                { id: 107, name: "Currywurst & Fries", price: 11.50, desc: "Sliced bratwurst topped with curry ketchup, served with fries.", emoji: "🇩🇪" },
+                { id: 108, name: "Bratwurst on a Bun", price: 9.99, desc: "Classic German sausage on a roll with mustard.", emoji: "🌭" },
+            ],
+            'store-54': [
+                { id: 109, name: "Tuna Mayo Onigiri", price: 4.50, desc: "Japanese rice ball filled with tuna and mayonnaise.", emoji: "🍙" },
+                { id: 110, name: "Salmon Teriyaki Onigiri", price: 4.99, desc: "Rice ball filled with sweet teriyaki salmon.", emoji: "🍣" },
+            ],
+            'store-55': [
+                { id: 111, name: "Carnitas Taco (3)", price: 9.50, desc: "Slow-cooked pork tacos with onion and cilantro.", emoji: "🌮" },
+                { id: 112, name: "Chicken Tostada (2)", price: 8.99, desc: "Crispy tortilla topped with refried beans and shredded chicken.", emoji: "🐔" },
+            ],
+            'store-56': [
+                { id: 113, name: "Churro with Chocolate Dip", price: 6.50, desc: "A long, crispy churro served with a thick chocolate dipping sauce.", emoji: "🍩" },
+                { id: 114, name: "Churro Bites with Caramel", price: 7.00, desc: "Bite-sized pieces of churro with a salted caramel dip.", emoji: "🍮" },
+            ],
+            'store-57': [
+                { id: 115, name: "Fried Chicken Drumstick (2)", price: 8.99, desc: "Two crispy, juicy chicken drumsticks.", emoji: "🍗" },
+                { id: 116, name: "Coleslaw Side", price: 3.50, desc: "Creamy, tangy coleslaw with shredded cabbage and carrots.", emoji: "🥕" },
+            ],
+            'store-58': [
+                { id: 117, name: "Blue Raspberry Slushie", price: 4.50, desc: "Ice-cold, sweet blue raspberry flavored drink.", emoji: "🥤" },
+                { id: 118, name: "Cherry Limeade Slushie", price: 4.99, desc: "A refreshing mix of cherry and lime, served icy cold.", emoji: "🍒" },
+            ],
+            'store-59': [
+                { id: 119, name: "Half Dozen Fresh Oysters", price: 19.99, desc: "Six fresh oysters served on the half shell with cocktail sauce.", emoji: "🦪" },
+                { id: 120, name: "Mignonette Sauce", price: 1.00, desc: "A classic condiment of minced shallots, cracked pepper, and vinegar.", emoji: "🧂" },
+            ],
+            'store-60': [
+                { id: 121, name: "Pork Potstickers (6)", price: 9.50, desc: "Pan-fried dumplings filled with seasoned ground pork.", emoji: "🥟" },
+                { id: 122, name: "Vegetable Potstickers (6)", price: 8.99, desc: "Pan-fried dumplings filled with mixed vegetables.", emoji: "🥬" },
+            ],
+            'store-61': [
+                { id: 123, name: "Blueberry Hotcakes Stack", price: 11.99, desc: "A tall stack of hotcakes loaded with fresh blueberries.", emoji: "🫐" },
+                { id: 124, name: "Bacon & Sausage Side", price: 5.50, desc: "Strips of crispy bacon and savory sausage links.", emoji: "🥓" },
+            ],
+            'store-62': [
+                { id: 125, name: "Wild Mushroom & Truffle Pizza", price: 15.99, desc: "Gourmet pizza topped with wild mushrooms and truffle oil.", emoji: "🍄" },
+                { id: 126, name: "Margherita Pizza Slice", price: 4.50, desc: "Classic slice with fresh mozzarella, tomato, and basil.", emoji: "🍅" },
+            ],
+            'store-63': [
+                { id: 127, name: "Farmers Omelet", price: 12.99, desc: "Fluffy egg omelet filled with ham, peppers, onions, and cheese.", emoji: "🍳" },
+                { id: 128, name: "Side of Hash Browns", price: 3.99, desc: "Crispy, shredded fried potatoes.", emoji: "🥔" },
+            ],
+            'store-64': [
+                { id: 129, name: "Bowl of Chili Con Carne", price: 14.50, desc: "Spicy ground beef and bean stew.", emoji: "🌶️" },
+                { id: 130, name: "Cornbread Muffin", price: 2.00, desc: "Sweet and savory cornmeal muffin.", emoji: "🌽" },
+            ],
+            'store-65': [
+                { id: 131, name: "Classic Cheddar Grilled Cheese", price: 9.99, desc: "Melted cheddar cheese between two slices of buttered toast.", emoji: "🥪" },
+                { id: 132, name: "Tomato Soup Shooter", price: 3.50, desc: "A small cup of warm, creamy tomato soup for dipping.", emoji: "🍅" },
+            ],
+            'store-66': [
+                { id: 133, name: "Watermelon & Mint Smoothie", price: 6.99, desc: "A cooling and hydrating summer drink.", emoji: "🍉" },
+                { id: 134, name: "Pina Colada Smoothie", price: 7.50, desc: "Pineapple, coconut milk, and banana blend.", emoji: "🍍" },
+            ],
+            'store-67': [
+                { id: 135, name: "Classic Caramel Flan Slice", price: 7.99, desc: "Rich, creamy custard with a soft caramel topping.", emoji: "🍮" },
+                { id: 136, name: "Coconut Flan Slice", price: 8.50, desc: "Flan infused with coconut milk and topped with toasted coconut.", emoji: "🥥" },
+            ],
+            'store-68': [
+                { id: 137, name: "Lamb Rogan Josh Curry", price: 18.99, desc: "Tender lamb cooked in a fragrant, spicy Kashmiri chili gravy.", emoji: "🐑" },
+                { id: 138, name: "Basmati Rice", price: 3.00, desc: "Fluffy, aromatic white rice.", emoji: "🍚" },
+            ],
+            'store-69': [
+                { id: 139, name: "Fresh Shrimp Spring Rolls (2)", price: 9.99, desc: "Cool rice paper rolls filled with shrimp, vermicelli, and herbs.", emoji: "🍤" },
+                { id: 140, name: "Peanut Dipping Sauce", price: 1.00, desc: "Sweet and savory peanut sauce.", emoji: "🥜" },
+            ],
+            'store-70': [
+                { id: 141, name: "Baked Sweet Potato w/ Cinnamon", price: 5.99, desc: "A soft baked sweet potato lightly dusted with cinnamon.", emoji: "🍠" },
+                { id: 142, name: "Sweet Potato Wedges", price: 4.99, desc: "Thick-cut, seasoned sweet potato fries.", emoji: "🍟" },
+            ],
+            'store-71': [
+                { id: 143, name: "Plain Butter Croissant", price: 3.50, desc: "A flaky, buttery French crescent roll.", emoji: "🥐" },
+                { id: 144, name: "Almond Croissant", price: 4.50, desc: "Croissant filled with sweet almond paste and sliced almonds.", emoji: "🌰" },
+            ],
+            'store-72': [
+                { id: 145, name: "Maple Bacon Donut", price: 3.99, desc: "Glazed donut topped with crispy smoked bacon.", emoji: "🥓" },
+                { id: 146, name: "Lemon Glazed Donut", price: 3.50, desc: "A classic glazed donut with a zesty lemon finish.", emoji: "🍋" },
+            ],
+            'store-73': [
+                { id: 147, name: "Classic Horiatiki Greek Salad", price: 12.99, desc: "Tomato, cucumber, onion, and feta salad with a simple oil dressing.", emoji: "🥗" },
+                { id: 148, name: "Spanakopita Triangle", price: 6.99, desc: "Savory pastry with spinach and feta cheese filling.", emoji: "🌿" },
+            ],
+            'store-74': [
+                { id: 149, name: "Potato & Cheese Pirogi (4)", price: 9.50, desc: "Boiled or fried dumplings filled with potato and farmer's cheese.", emoji: "🥔" },
+                { id: 150, name: "Sour Cream Dip", price: 1.00, desc: "A dollop of cool sour cream for dipping.", emoji: "🥄" },
+            ],
+            'store-75': [
+                { id: 151, name: "Sourdough Loaf (Whole)", price: 7.99, desc: "A large, fresh-baked loaf with a crispy crust.", emoji: "🍞" },
+                { id: 152, name: "Olive Oil & Herb Dip", price: 3.50, desc: "Extra virgin olive oil infused with rosemary and thyme.", emoji: "🫒" },
+            ],
+            'store-76': [
+                { id: 153, name: "Creamy Tomato Basil Soup", price: 8.50, desc: "A smooth, comforting tomato soup.", emoji: "🍅" },
+                { id: 154, name: "Chicken Noodle Soup", price: 9.50, desc: "Classic chicken broth with egg noodles and vegetables.", emoji: "🐔" },
+            ],
+            'store-77': [
+                { id: 155, name: "Veggie Samosa (2)", price: 6.99, desc: "Crispy fried pastry filled with spiced potatoes and peas.", emoji: "🌶️" },
+                { id: 156, name: "Tamarind Chutney Dip", price: 1.00, desc: "Sweet and sour tamarind dipping sauce.", emoji: "🥭" },
+            ],
+            'store-78': [
+                { id: 157, name: "Mini Apple Crumble Tart", price: 4.50, desc: "A personal tart with cinnamon apple filling and a crumb topping.", emoji: "🍎" },
+                { id: 158, name: "Mixed Berry Tart", price: 4.99, desc: "Sweet crust filled with fresh strawberries, blueberries, and raspberries.", emoji: "🍓" },
+            ],
+            'store-79': [
+                { id: 159, name: "Classic Pink Lemonade", price: 4.50, desc: "A sweet and tangy glass of pink lemonade.", emoji: "🍋" },
+                { id: 160, name: "Sparkling Watermelon Drink", price: 5.50, desc: "Fresh watermelon juice mixed with sparkling water.", emoji: "🍉" },
+            ],
+            'store-80': [
+                { id: 161, name: "Crunchy Chicken Chalupa", price: 9.99, desc: "Fried flatbread filled with chicken, lettuce, tomato, and cheese.", emoji: "🌮" },
+                { id: 162, name: "Cheese & Beef Gordita", price: 8.99, desc: "A thick corn tortilla stuffed with seasoned beef and cheese.", emoji: "🧀" },
+            ],
+            'store-81': [
+                { id: 163, name: "Giant Italian Meatball (3)", price: 12.99, desc: "Three large, savory meatballs made with beef and pork.", emoji: "🍝" },
+                { id: 164, name: "Marinara Sauce", price: 1.50, desc: "Our signature slow-simmered tomato sauce.", emoji: "🍅" },
+            ],
+            'store-82': [
+                { id: 165, name: "Mango Ginger Protein Smoothie", price: 8.50, desc: "Smoothie with mango, ginger, yogurt, and protein powder.", emoji: "🥭" },
+                { id: 166, name: "Peanut Butter Banana Shake", price: 7.99, desc: "Classic peanut butter and banana milkshake.", emoji: "🍌" },
+            ],
+            'store-83': [
+                { id: 167, name: "Beef Chimichanga (Fried Burrito)", price: 14.99, desc: "A deep-fried burrito filled with seasoned beef and beans.", emoji: "🌯" },
+                { id: 168, name: "Sour Cream Side", price: 1.00, desc: "A cool dollop of sour cream.", emoji: "🥄" },
+            ],
+            'store-84': [
+                { id: 169, name: "Potato Gnocchi w/ Pesto", price: 14.50, desc: "Soft potato dumplings tossed in fresh basil pesto.", emoji: "🌿" },
+                { id: 170, name: "Simple Tomato Sauce Gnocchi", price: 13.99, desc: "Gnocchi in a light tomato and parmesan sauce.", emoji: "🍅" },
+            ],
+            'store-85': [
+                { id: 171, name: "Beef & Veggie Hand Pie", price: 10.50, desc: "A savory handheld pastry filled with beef and vegetables.", emoji: "🥧" },
+                { id: 172, name: "Chicken & Mushroom Pie", price: 11.50, desc: "Creamy chicken and mushroom filling in a flaky crust.", emoji: "🍄" },
+            ],
+            'store-86': [
+                { id: 173, name: "Pork Wonton Soup", price: 12.99, desc: "Pork wontons and greens in a light chicken broth.", emoji: "🍜" },
+                { id: 174, name: "Fried Crab Wontons (4)", price: 7.99, desc: "Crispy fried wontons filled with crab and cream cheese.", emoji: "🦀" },
+            ],
+            'store-87': [
+                { id: 175, name: "Spinach Artichoke Dip", price: 9.99, desc: "Warm, cheesy dip served with tortilla chips.", emoji: "🥣" },
+                { id: 176, name: "Warm Pita Chips", price: 3.50, desc: "Crispy, seasoned pita chips.", emoji: "🥨" },
+            ],
+            'store-88': [
+                { id: 177, name: "Classic Sausage Roll", price: 5.50, desc: "Seasoned ground sausage wrapped in puff pastry.", emoji: "👑" },
+                { id: 178, name: "Marmite Scroll", price: 4.50, desc: "Flaky scroll pastry filled with Marmite and cheese.", emoji: "🧀" },
+            ],
+            'store-89': [
+                { id: 179, name: "Mini Lobster Roll (Cold)", price: 24.99, desc: "Fresh lobster meat tossed in mayo, served in a buttered roll.", emoji: "🦞" },
+                { id: 180, name: "Lobster Bisque Soup", price: 12.50, desc: "A rich, creamy soup made with lobster stock.", emoji: "🥣" },
+            ],
+            'store-90': [
+                { id: 181, name: "Chili Cheese Dog", price: 8.99, desc: "Hot dog smothered in chili and melted cheddar cheese.", emoji: "🌭" },
+                { id: 182, name: "Classic New York Hot Dog", price: 6.99, desc: "Hot dog with sauerkraut and brown mustard.", emoji: "🗽" },
+            ],
+            'store-91': [
+                { id: 183, name: "New York Cheesecake Slice", price: 7.99, desc: "Dense, creamy cheesecake on a graham cracker crust.", emoji: "🍰" },
+                { id: 184, name: "Strawberry Swirl Cheesecake", price: 8.50, desc: "Cheesecake swirled with fresh strawberry topping.", emoji: "🍓" },
+            ],
+            'store-92': [
+                { id: 185, name: "Classic Poutine", price: 11.99, desc: "French fries topped with cheese curds and hot gravy.", emoji: "🇨🇦" },
+                { id: 186, name: "BBQ Pulled Pork Poutine", price: 14.99, desc: "Poutine topped with tender BBQ pulled pork.", emoji: "🐷" },
+            ],
+            'store-93': [
+                { id: 187, name: "Grilled Chicken Burrito", price: 13.99, desc: "Rice, beans, chicken, salsa, and sour cream wrapped in a tortilla.", emoji: "🐔" },
+                { id: 188, name: "Vegetarian Black Bean Burrito", price: 12.99, desc: "Burrito filled with black beans, rice, and fresh vegetables.", emoji: "🥑" },
+            ],
+            'store-94': [
+                { id: 189, name: "Beef Kebab Skewers (2)", price: 16.50, desc: "Two skewers of marinated, grilled beef and vegetables.", emoji: "🥩" },
+                { id: 190, name: "Tzatziki Cucumber Dip", price: 2.50, desc: "Cool yogurt dip with cucumber and garlic.", emoji: "🥒" },
+            ],
+            'store-95': [
+                { id: 191, name: "Giant Frosted Cinnamon Roll", price: 5.50, desc: "A massive, warm, gooey cinnamon roll with thick vanilla icing.", emoji: "🌀" },
+                { id: 192, name: "Mini Pecan Roll (3)", price: 6.99, desc: "Three sticky, sweet rolls topped with caramelized pecans.", emoji: "🥜" },
+            ],
+            'store-96': [
+                { id: 193, name: "Crispy Sesame Tofu Cubes", price: 11.50, desc: "Fried tofu cubes tossed in a sweet sesame glaze.", emoji: "🥢" },
+                { id: 194, name: "Tofu Pad Thai Noodles", price: 14.99, desc: "Rice noodles stir-fried with tofu, peanuts, and lime.", emoji: "🍜" },
+            ],
+            'store-97': [
+                { id: 195, name: "Belgian Waffle with Chocolate", price: 9.50, desc: "Thick, yeasted waffle topped with melted dark chocolate.", emoji: "🧇" },
+                { id: 196, name: "Chicken and Waffles (Savory)", price: 15.99, desc: "Crispy fried chicken pieces served on top of a waffle.", emoji: "🍗" },
+            ],
+            'store-98': [
+                { id: 197, name: "Creamy Chicken Pot Pie", price: 14.50, desc: "Chicken and vegetables baked in a rich gravy with a flaky crust.", emoji: "🥧" },
+                { id: 198, name: "Beef Stew Pot Pie", price: 15.50, desc: "Hearty beef stew filling topped with a savory crust.", emoji: "🥩" },
+            ],
+            'store-99': [
+                { id: 199, name: "Ham & Swiss Toastie", price: 9.99, desc: "Classic grilled sandwich with melted Swiss cheese and ham.", emoji: "🧀" },
+                { id: 200, name: "Three Cheese & Onion Toastie", price: 8.99, desc: "A vegetarian toastie with cheddar, mozzarella, and provolone.", emoji: "🧅" },
+            ],
+            'store-100': [
+                { id: 201, name: "Loaded Baked Potato", price: 10.99, desc: "Giant baked potato topped with sour cream, chives, and bacon.", emoji: "🥓" },
+                { id: 202, name: "Chili & Cheese Potato Skins", price: 9.99, desc: "Crispy potato skins filled with chili and melted cheese.", emoji: "🔥" },
+            ]
+        };
+
+        const app = document.getElementById('app');
+
+        // --- State Management ---
+        let state = {
+            view: 'home', // 'home' or 'menu'
+            selectedStoreId: null,
+            cart: {}, // {itemId: {item, quantity}}
+            isCartOpen: false,
+            message: null,
+            searchTerm: '' // State to store the current search input
+        };
+
+        // --- Core Functions ---
+
+        /** Updates the state and re-renders the application. */
+        function setState(newState) {
+            state = { ...state, ...newState };
+            renderApp();
+        }
+
+        /** Handles the search input field change. */
+        function handleSearchInput(event) {
+            // Update the search term state, ensuring it's lower case for filtering
+            setState({ searchTerm: event.target.value.toLowerCase(), isCartOpen: false });
+        }
+
+        /** Handles navigation to a store's menu. */
+        function navigateToMenu(storeId) {
+            setState({ view: 'menu', selectedStoreId: storeId, isCartOpen: false });
+        }
+
+        /** Handles navigating back to the home view. */
+        function navigateHome() {
+            setState({ view: 'home', selectedStoreId: null, isCartOpen: false });
+        }
+
+        /** Adds or updates an item in the cart. */
+        function addToCart(item, quantity = 1) {
+            const currentQuantity = state.cart[item.id] ? state.cart[item.id].quantity : 0;
+            const newQuantity = currentQuantity + quantity;
+
+            const newCart = { ...state.cart };
+
+            if (newQuantity <= 0) {
+                delete newCart[item.id];
+            } else {
+                newCart[item.id] = { item, quantity: newQuantity };
+            }
+
+            setState({ cart: newCart, message: { text: `Added ${item.emoji} ${item.name} to your cart!`, type: 'success' } });
+            setTimeout(() => setState({ message: null }), 3000); // Clear message after 3 seconds
+        }
+
+        /** Calculates the total cost of the cart. */
+        function calculateTotal() {
+            return Object.values(state.cart).reduce((total, entry) => {
+                return total + (entry.item.price * entry.quantity);
+            }, 0);
+        }
+
+        /** Simulates the checkout process. */
+        function checkout() {
+            if (Object.keys(state.cart).length === 0) {
+                setState({ message: { text: "Your cart is empty! Add some treats first. 🥺", type: 'error' } });
+                return;
+            }
+
+            const total = calculateTotal().toFixed(2);
+            setState({
+                view: 'home',
+                selectedStoreId: null,
+                cart: {},
+                isCartOpen: false,
+                message: { text: `Order placed! Your adorable food is on its way. Total: $${total} 🥳`, type: 'success' }
+            });
+        }
+
+        // --- UI Components ---
+
+        /** Renders the persistent Header/Nav Bar. */
+        function renderHeader() {
+            const cartItemCount = Object.values(state.cart).reduce((count, entry) => count + entry.quantity, 0);
+
+            return `
+                <header class="sticky top-0 z-10 p-4 bg-white border-b-4 border-pink-200 kawaii-shadow">
+                    <div class="flex items-center justify-between">
+                        <!-- Logo/Back Button -->
+                        <div class="flex items-center">
+                            ${state.view === 'menu' ? `
+                                <button onclick="navigateHome()" class="p-2 text-pink-500 rounded-full hover:bg-pink-100 focus:outline-none">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                                </button>
+                            ` : `<h1 class="text-3xl font-black text-pink-500">KawaiiDash</h1>`}
+                        </div>
+
+                        <!-- Cart Button -->
+                        <div class="flex items-center">
+                            <button onclick="setState({isCartOpen: !state.isCartOpen})" class="relative p-2 text-pink-500 rounded-full hover:bg-pink-100 focus:outline-none">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                ${cartItemCount > 0 ? `<span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-400 rounded-full">${cartItemCount}</span>` : ''}
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Input (Only visible on Home View) -->
+                    ${state.view === 'home' ? `
+                        <div class="relative mt-3">
+                            <input id="search-input" type="text" placeholder="Search for food, cuisine, or tags (e.g., pizza, vegan, sushi)..." value="${state.searchTerm}" oninput="handleSearchInput(event)" class="w-full py-2 pl-10 pr-4 text-gray-700 placeholder-pink-300 border-2 border-pink-200 rounded-full bg-pink-50 focus:border-pink-400 focus:ring focus:ring-pink-100 focus:outline-none">
+                            <svg class="absolute w-5 h-5 text-pink-400 transform -translate-y-1/2 left-3 top-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                    ` : ''}
+                </header>
+            `;
+        }
+
+        /** Renders the list of restaurants (Home View) with search filtering. */
+        function renderHomeView() {
+            const searchTerm = state.searchTerm.trim();
+
+            const filteredStores = STORES.filter(store => {
+                if (!searchTerm) return true; // Show all if no search term
+
+                const searchLower = searchTerm.toLowerCase();
+
+                // 1. Check store name
+                if (store.name.toLowerCase().includes(searchLower)) return true;
+
+                // 2. Check store tags
+                if (store.tags.some(tag => tag.toLowerCase().includes(searchLower))) return true;
+
+                return false;
+            });
+
+            const list = filteredStores.map(store => `
+                <div onclick="navigateToMenu('${store.id}')" class="flex items-center p-4 mb-4 transition duration-300 bg-white border-4 border-pink-200 rounded-2xl cursor-pointer hover:bg-pink-50 kawaii-shadow">
+                    <span class="text-4xl p-3 bg-pink-100 rounded-full">${store.icon}</span>
+                    <div class="flex-grow ml-4">
+                        <h2 class="text-xl font-bold text-violet-700">${store.name}</h2>
+                        <div class="flex items-center text-sm text-gray-500 space-x-2">
+                            <span class="text-yellow-500">⭐ ${store.rating}</span>
+                            <span>•</span>
+                            <span>${store.delivery}</span>
+                        </div>
+                        <p class="text-xs text-pink-400 mt-1">${store.tags.join(' • ')}</p>
+                    </div>
+                    <span class="text-pink-400 text-2xl font-bold">»</span>
+                </div>
+            `).join('');
+
+            return `
+                <main class="p-4">
+                    <h2 class="mb-4 text-2xl font-extrabold text-violet-800">Cuddle-Approved Kitchens 💖 (${STORES.length} Stores)</h2>
+                    ${filteredStores.length > 0 ? list : '<p class="text-center text-gray-500 mt-8 text-xl">No cuteness matched your search! Try "truffle" or "scones". 😢</p>'}
+                </main>
+            `;
+        }
+
+        /** Renders the menu items for a selected store (Menu View). */
+        function renderMenuView() {
+            const store = STORES.find(s => s.id === state.selectedStoreId);
+            if (!store) return `<div class="p-4 text-center">Store Not Found 😭</div>`;
+
+            const menuItems = MENU[store.id] || [];
+
+            const itemList = menuItems.map(item => `
+                <div class="flex items-center p-3 mb-3 bg-pink-50 border-2 border-pink-200 rounded-xl">
+                    <div class="text-3xl mr-3">${item.emoji}</div>
+                    <div class="flex-grow">
+                        <h3 class="font-semibold text-violet-700">${item.name}</h3>
+                        <p class="text-xs text-gray-500">${item.desc}</p>
+                        <span class="text-md font-bold text-pink-500">$${item.price.toFixed(2)}</span>
+                    </div>
+                    <button onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')})" class="kawaii-button ml-3 px-3 py-1 text-sm font-bold text-white bg-pink-400 rounded-full hover:bg-pink-500 focus:outline-none">
+                        Add +
+                    </button>
+                </div>
+            `).join('');
+
+            return `
+                <main class="p-4">
+                    <h2 class="mb-4 text-3xl font-extrabold text-violet-800 flex items-center">
+                        ${store.icon} ${store.name} Menu
+                    </h2>
+                    ${itemList.length > 0 ? itemList : '<p class="text-center text-gray-500 mt-8">No adorable items found yet. 🥲</p>'}
+                </main>
+            `;
+        }
+
+        /** Renders the Cart Sidebar/Modal. */
+        function renderCart() {
+            if (!state.isCartOpen) return '';
+
+            const cartItems = Object.values(state.cart);
+            const subtotal = calculateTotal();
+            const tax = subtotal * 0.08;
+            const deliveryFee = subtotal > 0 ? 3.99 : 0.00;
+            const total = subtotal + tax + deliveryFee;
+
+            const cartContent = cartItems.length === 0 ?
+                `<div class="p-8 text-center text-gray-500">Your basket is feeling lonely! 🧺</div>` :
+                cartItems.map(entry => {
+                    const item = entry.item;
+                    const itemTotal = (item.price * entry.quantity).toFixed(2);
+                    return `
+                        <div class="flex items-center justify-between p-3 border-b border-pink-100 last:border-b-0">
+                            <div class="flex items-center flex-grow">
+                                <span class="text-xl mr-2">${item.emoji}</span>
+                                <div class="truncate">
+                                    <p class="font-semibold text-violet-700 truncate">${item.name}</p>
+                                    <p class="text-xs text-gray-500">$${item.price.toFixed(2)} ea</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-2">
+                                <button onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')}, -1)" class="p-1 text-xs font-bold text-pink-500 bg-pink-100 rounded-full w-6 h-6">-</button>
+                                <span class="w-4 text-center text-sm font-bold">${entry.quantity}</span>
+                                <button onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')}, 1)" class="p-1 text-xs font-bold text-pink-500 bg-pink-100 rounded-full w-6 h-6">+</button>
+                            </div>
+
+                            <span class="ml-4 font-bold text-pink-500">$${itemTotal}</span>
+                        </div>
+                    `;
+                }).join('');
+
+            return `
+                <div class="fixed inset-0 z-20 bg-black bg-opacity-30" onclick="setState({isCartOpen: false})"></div>
+                <div class="fixed top-0 right-0 z-30 h-full w-full max-w-sm bg-white p-4 shadow-2xl overflow-y-auto">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-pink-200">
+                        <h2 class="text-2xl font-extrabold text-violet-800">Your Adorable Cart 🛒</h2>
+                        <button onclick="setState({isCartOpen: false})" class="p-1 text-pink-500 rounded-full hover:bg-pink-100 focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+
+                    <!-- Cart Items -->
+                    <div class="mb-6">
+                        ${cartContent}
+                    </div>
+
+                    <!-- Totals Summary -->
+                    ${cartItems.length > 0 ? `
+                        <div class="p-4 bg-pink-50 rounded-xl border border-pink-200">
+                            <div class="flex justify-between py-1 text-sm text-gray-600"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+                            <div class="flex justify-between py-1 text-sm text-gray-600"><span>Tax (8%)</span><span>$${tax.toFixed(2)}</span></div>
+                            <div class="flex justify-between py-1 text-sm text-gray-600"><span>Delivery Fee</span><span>$${deliveryFee.toFixed(2)}</span></div>
+                            <div class="flex justify-between py-2 mt-2 border-t border-pink-300">
+                                <span class="text-lg font-bold text-violet-800">Total</span>
+                                <span class="text-lg font-bold text-pink-500">$${total.toFixed(2)}</span>
+                            </div>
+                        </div>
+
+                        <!-- Checkout Button -->
+                        <button onclick="checkout()" class="kawaii-button w-full mt-6 py-3 text-lg font-bold text-white bg-pink-500 rounded-full hover:bg-pink-600 focus:outline-none focus:ring-4 focus:ring-pink-300">
+                            ✨ Checkout Now!
+                        </button>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        /** Renders the floating Notification/Message Box. */
+        function renderMessage() {
+            if (!state.message) return '';
+            const bgColor = state.message.type === 'success' ? 'bg-emerald-400' : 'bg-red-400';
+            const emoji = state.message.type === 'success' ? '💖' : '🛑';
+
+            return `
+                <div class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40 p-4 ${bgColor} text-white font-bold rounded-xl kawaii-shadow"
+                     style="animation: fadeInOut 3s ease-in-out forwards;">
+                    ${emoji} ${state.message.text}
+                </div>
+                <style>
+                    @keyframes fadeInOut {
+                        0% { opacity: 0; transform: translate(-50%, 20px); }
+                        10% { opacity: 1; transform: translate(-50%, 0); }
+                        90% { opacity: 1; transform: translate(-50%, 0); }
+                        100% { opacity: 0; transform: translate(-50%, 20px); }
+                    }
+                </style>
+            `;
+        }
+
+        /** Main Render Loop */
+        function renderApp() {
+            const previousSearchTerm = state.searchTerm; // Save current term before rendering
+
+            let content = '';
+
+            // 1. Get Main Content
+            if (state.view === 'home') {
+                content = renderHomeView();
+            } else if (state.view === 'menu') {
+                content = renderMenuView();
+            }
+
+            // 2. Combine Header and Content
+            let html = renderHeader() + content;
+
+            // 3. Add Floating Components
+            html += renderCart();
+            html += renderMessage();
+
+            // 4. Update DOM
+            app.innerHTML = html;
+
+            // 5. Re-focus the search input after the re-render to keep the keyboard open
+            if (state.view === 'home' && previousSearchTerm) {
+                const searchInput = document.getElementById('search-input');
+                if (searchInput) {
+                    searchInput.focus();
+
+                    // Set the cursor position to the end of the text
+                    const len = searchInput.value.length;
+                    if (searchInput.setSelectionRange) {
+                        searchInput.setSelectionRange(len, len);
+                    }
+                }
+            }
+        }
+
+        // Initial render
+        renderApp();
+    </script>
+
+</body></html>

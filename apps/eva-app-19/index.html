@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMjc1ODM2MTU4NDMzNTIyMzc4MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiIwOWFkNzZmMmUxZGItc3R1ZmZ5X3NjaG9sYXJzX2FjYWRlbXkuaHRtbC05MiJ9LCJleHAiOjE3NzE1NjY3NjIsImlhdCI6MTc3MTU2MzE2MiwiYWxnIjoiUlMyNTYifQ.TKrPuqd1NQX9xdJ91-2a-bPhLmXpfJMnu95Y2JNJ4h_M5PKDKSeQJmVgm9NIsfLigd_IWj4QyTCO5yPeDyj5ZG9gVkcu2-KcTMX48zXijZF054z0C-f_-bqbBzl8B_RMzC6VNJK3YwZs4tdf-0nsYOdIqAzcGoLqbj3dM1a9sR8WFws4_3Gl0fIzj_rgW8RvcbZeM7NKRZr-pWfCixVZWw8iwYjKCY1QsXu3UDyLwFasbyKBXZDeQAr4v-NeAh3zZy_RBmrf14O4PtD061CMhq7ZVAlFQDfNIsS2ZPgA6HC3b_tc6gfh9ZpYC8mPcIiAtR0rEraYwawwL8RFOYoHXQ","09ad76f2e1db-stuffy_scholars_academy.html-92")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stuffie Scholars Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FIX: MathJax added to correctly render LaTeX equations (like \frac{T}{20}) -->
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
+    <script>
+        // Configure MathJax to use standard delimiters ($$ for block, $ for inline)
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+
+    <script type="module">
+        // Firebase Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, onSnapshot, deleteDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global Firebase Configuration
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db;
+        let auth;
+        let userId = 'loading'; 
+        let stuffyProfileRef = null;
+
+        // Global suggested emojis for the selector
+        // ADDED 5 NEW EMOJIS: 🐼, 🐸, 🐙, 🌟, 📘
+        const SUGGESTED_EMOJIS = ['🧸', '🦄', '🐰', '🦁', '🦊', '🐷', '🐧', '🦉', '🦖', '🚀', '🐼', '🐸', '🐙', '🌟', '📘'];
+
+        // --- Core Application State ---
+
+        const DEFAULT_STUFFY_STATE = {
+            name: "New Friend",
+            happiness: 50, // 0-100
+            mood: "Sleepy 😴",
+            profileEmoji: '🧸', 
+            lastUpdate: Date.now(),
+            isInitialized: false
+        };
+
+        const state = {
+            stuffy: { ...DEFAULT_STUFFY_STATE },
+            isAppReady: false,
+            isLoading: true,
+            isProfileSetup: false,
+            resetStep: 1, // 1, 2, or 3 for triple check
+            tempSelectedEmoji: DEFAULT_STUFFY_STATE.profileEmoji // Temporary state for setup
+        };
+
+        const elements = {};
+
+        // Utility function to get a random item from an array
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        // Utility to map elements on load
+        function mapElements() {
+            elements.loader = document.getElementById('app-loader');
+            elements.setupScreen = document.getElementById('setup-screen');
+            elements.dashboard = document.getElementById('dashboard');
+            
+            // Setup Screen Elements
+            elements.stuffyNameInput = document.getElementById('stuffy-name-input');
+            elements.saveNameButton = document.getElementById('save-name-btn');
+            elements.emojiListContainer = document.getElementById('emoji-list-container'); 
+            
+            // Dashboard Elements
+            elements.stuffyNameDisplay = document.getElementById('stuffy-name-display');
+            elements.stuffyEmojiDisplay = document.getElementById('stuffy-emoji-display'); 
+            elements.moodIcon = document.getElementById('mood-icon');
+            elements.moodDescription = document.getElementById('mood-description');
+            elements.happinessBar = document.getElementById('happiness-bar');
+            elements.giveHugBtn = document.getElementById('give-hug-btn');
+            elements.giveSnackBtn = document.getElementById('give-snack-btn');
+            elements.userIdDisplay = document.getElementById('user-id-display');
+            elements.messageBox = document.getElementById('message-box');
+            elements.messageText = document.getElementById('message-text');
+            elements.lessonModal = document.getElementById('lesson-modal');
+            elements.lessonModalTitle = document.getElementById('lesson-modal-title');
+            elements.lessonModalContent = document.getElementById('lesson-modal-content');
+            elements.closeModalBtn = document.getElementById('close-modal-btn');
+            elements.syllabusContainer = document.getElementById('syllabus-container'); 
+            
+            // Reset Elements
+            elements.resetAccountBtn = document.getElementById('reset-account-btn');
+            elements.resetModal = document.getElementById('reset-modal');
+            elements.closeResetModalBtn = document.getElementById('close-reset-modal-btn');
+            elements.resetStep1 = document.getElementById('reset-step-1');
+            elements.resetStep2 = document.getElementById('reset-step-2');
+            elements.resetStep3 = document.getElementById('reset-step-3');
+            elements.confirmResetBtn1 = document.getElementById('confirm-reset-btn-1');
+            elements.confirmResetBtn2 = document.getElementById('confirm-reset-btn-2');
+            elements.finalResetBtn = document.getElementById('final-reset-btn');
+            elements.resetStuffyName1 = document.getElementById('reset-stuffy-name-1');
+            elements.resetStuffyName3 = document.getElementById('reset-stuffy-name-3');
+        }
+
+        // Utility function to display temporary messages instead of alert()
+        function showMessage(text) {
+            elements.messageText.textContent = text;
+            elements.messageBox.classList.remove('hidden');
+            setTimeout(() => {
+                elements.messageBox.classList.add('hidden');
+            }, 3000);
+        }
+
+        // --- Dynamic Lesson Data Organized by Unit ---
+
+        const SNUGGLE_SCIENCE_UNITS = {
+            'Fluff Physics': [
+                (name) => {
+                    const fluffDensity = (Math.random() * 4 + 6).toFixed(1);
+                    const tummyTemp = Math.floor(Math.random() * 10 + 90);
+                    const successScore = (parseFloat(fluffDensity) + (tummyTemp / 20)).toFixed(2);
+                    return {
+                        title: "Thermodynamics of Nap Success",
+                        icon: "🌡️",
+                        // Uses <strong> for bolding and $$ for display math
+                        content: `We study the <strong>Optimum Fluff Density Index (OFDI)</strong>. Your stuffie, ${name}, has a Fluff Density ($F$) of <strong>${fluffDensity}</strong>. The Tummy Temperature ($T$) is <strong>${tummyTemp}^{\\circ}$FF</strong>. The Nap Success Score ($S$) is calculated:
+$$S = F + \\frac{T}{20}$$
+Substituting values:
+$$S = ${fluffDensity} + \\frac{${tummyTemp}}{20} = ${successScore}$$
+A score above $10.0$ indicates peak napping efficiency.`
+                    };
+                },
+                (name) => {
+                    const fabricStatic = (Math.random() * 0.4 + 0.1).toFixed(2);
+                    const plushieWeight = (Math.random() * 1.5 + 0.5).toFixed(1);
+                    const totalDrag = (parseFloat(fabricStatic) * parseFloat(plushieWeight) * 10).toFixed(2);
+                    return {
+                        title: "Quantifying Static Drag",
+                        icon: "⚡",
+                        content: `We investigate the <strong>Static Cling Factor ($C$)</strong> of the cuddle fabric. The static rating is <strong>${fabricStatic}</strong>. ${name}'s weight ($W$) is <strong>${plushieWeight}\\,kg$</strong>. The Total Drag ($D$) is calculated:
+$$D = C \\times W \\times 10$$
+Substituting values:
+$$D = ${fabricStatic} \\times ${plushieWeight} \\times 10 = ${totalDrag}$$
+A score above $5.0$ means it's time for an anti-static spritz.`
+                    };
+                }
+            ],
+            'Sleep Dynamics': [
+                (name) => {
+                    const plushieWeight = (Math.random() * 1.5 + 0.5).toFixed(1);
+                    const partnerPadding = (Math.random() * 3 + 1).toFixed(1);
+                    const gravity = 9.8;
+                    const hugTension = ((plushieWeight * gravity) / partnerPadding).toFixed(2);
+                    return {
+                        title: "Physics of Hug Tension",
+                        icon: "💪",
+                        content: `We calculate the required <strong>Hug Tension ($T_H$)</strong> to counteract gravity. ${name}'s weight ($W$) is <strong>${plushieWeight}\\,kg$</strong>. Partner Padding ($P$) is <strong>${partnerPadding}$ units</strong>.
+$$T_H = \\frac{W \\times g}{P}, \\quad \\text{where } g=9.8$$
+Substituting values:
+$$T_H = \\frac{${plushieWeight} \\times 9.8}{${partnerPadding}} = ${hugTension}\\,N$$
+The lower the $T_H$, the less effort is needed for a perfect secure hug!`
+                    };
+                },
+                (name) => {
+                    const dropHeight = (Math.random() * 1.5 + 0.5).toFixed(2);
+                    const airResistance = (Math.random() * 0.1 + 0.05).toFixed(3);
+                    const terminalVelocity = (Math.sqrt(2 * 9.8 * parseFloat(dropHeight) / parseFloat(airResistance))).toFixed(2);
+                    return {
+                        title: "Teddy Bear Tumble Velocity",
+                        icon: "🌪️",
+                        content: `We determine the Terminal Tumble Velocity ($V_T$) during an accidental fall from the bed. Given a Drop Height ($H$) of <strong>${dropHeight}\\,m$</strong> and a Fluff Air Resistance ($R$) of <strong>${airResistance}</strong>:
+$$\\text{Velocity}^2 = \\frac{2 g H}{R}$$
+$$V_T = \\sqrt{\\frac{2 \\times 9.8 \\times ${dropHeight}}{${airResistance}}} \\approx ${terminalVelocity}\\,m/s$$
+Always ensure a soft landing to keep $V_T$ low!`
+                    };
+                }
+            ]
+        };
+
+        const SNACK_MATH_UNITS = {
+            'Treat Ratios': [
+                (name) => {
+                    const totalCookies = Math.floor(Math.random() * 15 + 10);
+                    const stuffies = Math.floor(Math.random() * 3 + 3);
+                    const remainder = totalCookies % stuffies;
+                    const cookiesPer = Math.floor(totalCookies / stuffies);
+                    const compensationNeeded = remainder === 0 ? 0 : stuffies - remainder;
+                    const conclusion = remainder === 0 ? `The division is perfect!` : `Compensation needed: <strong>${compensationNeeded}</strong> more cookies.`;
+                    return {
+                        title: "Equitable Treat Distribution",
+                        icon: "➗",
+                        content: `You have <strong>${totalCookies}</strong> cookies ($N$) to share equally among <strong>${stuffies}</strong> stuffies. We find the remainder ($R$):
+$$R = N \\pmod {${stuffies}} = ${totalCookies} \\pmod {${stuffies}} = ${remainder}$$
+$$\\text{Each gets } = \\lfloor \\frac{N}{${stuffies}} \\rfloor = ${cookiesPer}$$
+Conclusion: ${conclusion}`
+                    };
+                },
+                (name) => {
+                    const coneRadius = (Math.random() * 1 + 2).toFixed(2);
+                    const coneHeight = (Math.random() * 2 + 3).toFixed(2);
+                    const volume = (1/3 * Math.PI * coneRadius**2 * coneHeight).toFixed(2);
+                    return {
+                        title: "Cone-Shaped Frosting Volume",
+                        icon: "🍦",
+                        content: `We calculate the volume of frosting ($V$) on a perfect cupcake swirl, modeled as a cone. Given a base Radius ($r$) of <strong>${coneRadius}\\,cm$</strong> and Height ($h$) of <strong>${coneHeight}\\,cm$</strong>:
+$$V = \\frac{1}{3} \\pi r^2 h$$
+Substituting values:
+$$V = \\frac{1}{3} \\times \\pi \\times ${coneRadius}^2 \\times ${coneHeight} \\approx ${volume}\\,cm^3$$
+${name} suggests a minimum volume of $10.0\\,cm^3$ for acceptable coverage.`
+                    };
+                }
+            ],
+            'Geometric Munchies': [
+                (name) => {
+                    const sideLength = (Math.random() * 1 + 2).toFixed(1);
+                    const height = (Math.random() * 0.5 + 1).toFixed(1);
+                    const volume = (sideLength * sideLength * height).toFixed(2);
+                    return {
+                        title: "Marshmallow Volume Scaling",
+                        icon: "🧊",
+                        content: `We calculate the total fluff volume of a square marshmallow ($V$). Given a side length ($L$) of <strong>${sideLength}\\,cm$</strong> and a height ($H$) of <strong>${height}\\,cm$</strong>:
+$$V = L^2 H$$
+Substituting values:
+$$V = ${sideLength}^2 \\times ${height} = ${volume}\\,cm^3$$
+${name} insists the volume must be greater than $6.0\\,cm^3$ for optimal chewing.`
+                    };
+                },
+                (name) => {
+                    const radius = (Math.random() * 0.8 + 1.2).toFixed(2);
+                    const circumference = (2 * Math.PI * radius).toFixed(2);
+                    const optimalPerimeter = (parseFloat(circumference) * 1.5).toFixed(2);
+                    return {
+                        title: "Cereal Piece Perimeter Optimization",
+                        icon: "⭕",
+                        content: `We analyze the perimeter of a circular cereal piece to optimize for crunch. Given a Radius ($r$) of <strong>${radius}\\,cm$</strong>:
+$$\\text{Circumference } (C) = 2 \\pi r$$
+$$\\text{Optimal Perimeter } (P_{opt}) = C \\times 1.5$$
+Substituting values ($\pi \\approx 3.1415$):
+$$C = 2 \\times \\pi \\times ${radius} = ${circumference}\\,cm$$
+$$P_{opt} = ${circumference} \\times 1.5 = ${optimalPerimeter}\\,cm$$
+The current perimeter is ${optimalPerimeter}\\text{cm}$, which is highly efficient for <strong>maximum crunch!</strong>`
+                    };
+                }
+            ]
+        };
+
+        const CUDDLE_HISTORY_UNITS = {
+            'Fort Architecture': [
+                (name) => {
+                    const blankets = Math.floor(Math.random() * 3 + 2);
+                    const pillows = Math.floor(Math.random() * 5 + 3);
+                    const stabilityRating = (blankets * 1.5).toFixed(1);
+                    const totalCuddleHours = (parseFloat(stabilityRating) + pillows).toFixed(1);
+                    return {
+                        title: "The Great Blanket Fort Construction",
+                        icon: "🏰",
+                        content: `The success of any fort is measured by its <strong>Total Cuddle Hours ($H$)</strong>, based on structural Blankets ($B$) and comfort Pillows ($P$).
+$$\\text{Stability Rating} = B \\times 1.5 = ${blankets} \\times 1.5 = ${stabilityRating}$$
+$$\\text{Total Cuddle Hours } (H) = \\text{Stability Rating} + P$$
+$$H = ${stabilityRating} + ${pillows} = ${totalCuddleHours}$$
+Your fort is currently scoring <strong>${totalCuddleHours}</strong>.`
+                    };
+                },
+                (name) => {
+                    const pouchLength = (Math.random() * 5 + 10).toFixed(1);
+                    const pouchWidth = (Math.random() * 3 + 4).toFixed(1);
+                    const storageArea = (pouchLength * Math.sqrt(pouchWidth)).toFixed(2);
+                    return {
+                        title: "Historical Pouch Dimensions",
+                        icon: "📏",
+                        content: `We measure the historical efficiency of stuffie pouches. Given a Pouch Length ($L$) of <strong>${pouchLength}\\,cm$</strong> and Pouch Width ($W$) of <strong>${pouchWidth}\\,cm$</strong>, the usable <strong>Storage Area ($A$)</strong> is calculated:
+$$A = L \\times \\sqrt{W}$$
+Substituting values:
+$$A = ${pouchLength} \\times \\sqrt{${pouchWidth}} \\approx ${storageArea}\\,cm^2$$
+${name}'s current pouch is a massive <strong>${storageArea}\\text{cm}^2$</strong>, showing excellent historical design adherence!`
+                    };
+                },
+            ],
+            'Generational Studies': [
+                (name) => {
+                    const ancientBears = Math.floor(Math.random() * 5 + 1);
+                    const modernStuffies = Math.floor(Math.random() * 10 + 5);
+                    const generationalQuotient = (modernStuffies / ancientBears).toFixed(2);
+                    return {
+                        title: "The Generational Quotient of Plush",
+                        icon: "📈",
+                        content: `We examine the growth of the plush population. Given a history starting with <strong>${ancientBears} Ancient Bears ($A$)</strong>, leading to <strong>${modernStuffies} Modern Stuffies ($M$)</strong>, we calculate the <strong>Generational Quotient ($Q$)</strong>.
+$$Q = \\frac{M}{A}$$
+$$Q = \\frac{${modernStuffies}}{${ancientBears}} = ${generationalQuotient}$$
+A high quotient shows successful multi-generational cuddling practices.`
+                    };
+                },
+                (name) => {
+                    const stitches = Math.floor(Math.random() * 50 + 20);
+                    const area = (Math.random() * 3 + 1).toFixed(1);
+                    const density = (stitches / parseFloat(area)).toFixed(2);
+                    return {
+                        title: "Antique Stitch Density",
+                        icon: "🧵",
+                        content: `We study the quality of vintage seams by calculating the <strong>Stitch Density ($D$)</strong>. Given <strong>${stitches} stitches ($S$)</strong> in an area ($A$) of <strong>${area}\\,cm^2$</strong>:
+$$D = \\frac{S}{A}$$
+Substituting values:
+$$D = \\frac{${stitches}}{${area}} = ${density}\\,stitches/cm^2$$
+A high density, like ${density}\\text{stitches/cm}^2$, indicates <strong>superior vintage craftsmanship.</strong>`
+                    };
+                }
+            ]
+        };
+
+        const LESSON_UNITS = {
+            'Snuggle Science': { icon: '🔬', description: 'The physics of optimal napping angles.', units: SNUGGLE_SCIENCE_UNITS },
+            'Snack Math': { icon: '➕', description: 'Calculating treat distribution and sharing ratios.', units: SNACK_MATH_UNITS },
+            'Cuddle History': { icon: '📜', description: 'Studying legendary naps and famous blanket forts.', units: CUDDLE_HISTORY_UNITS }
+        };
+
+        // --- Emoji Selector Logic ---
+        
+        // Utility for emoji selection
+        window.selectEmoji = function(emoji) {
+            state.tempSelectedEmoji = emoji;
+            // Highlight the selected emoji
+            document.querySelectorAll('.emoji-option').forEach(el => {
+                el.classList.remove('border-pink-500', 'ring-2', 'ring-pink-500');
+            });
+            const selectedElement = document.querySelector(`.emoji-option[data-emoji="${emoji}"]`);
+            if (selectedElement) {
+                selectedElement.classList.add('border-pink-500', 'ring-2', 'ring-pink-500');
+            }
+        }
+        
+        function generateEmojiSelectorHTML() {
+            // Ensure tempSelectedEmoji is set to default if null/empty
+            const currentEmoji = state.tempSelectedEmoji || DEFAULT_STUFFY_STATE.profileEmoji;
+            
+            return SUGGESTED_EMOJIS.map(emoji => `
+                <button type="button" 
+                        class="emoji-option text-3xl p-2 rounded-full border-4 border-gray-200 hover:border-pink-300 transition-all ${emoji === currentEmoji ? 'border-pink-500 ring-2 ring-pink-500' : ''}" 
+                        data-emoji="${emoji}" 
+                        onclick="selectEmoji('${emoji}')">
+                    ${emoji}
+                </button>
+            `).join('');
+        }
+
+        // --- Firestore Operations ---
+
+        function getStuffyProfilePath(uid) {
+            return `artifacts/${appId}/public/data/stuffy_profiles/${uid}`;
+        }
+
+        async function saveStuffyProfile() {
+            if (!stuffyProfileRef || !userId || !state.stuffy.name) return;
+            state.stuffy.lastUpdate = Date.now();
+            try {
+                // Ensure we only save relevant data, including the new profileEmoji
+                const dataToSave = {
+                    name: state.stuffy.name,
+                    happiness: state.stuffy.happiness,
+                    mood: state.stuffy.mood,
+                    profileEmoji: state.stuffy.profileEmoji,
+                    lastUpdate: state.stuffy.lastUpdate
+                };
+                await setDoc(stuffyProfileRef, dataToSave);
+            } catch (error) {
+                console.error("Error saving stuffy profile:", error);
+                showMessage(`Error saving profile: ${error.message}`);
+            }
+        }
+
+        /**
+         * Permanently deletes the stuffie profile document and resets local state.
+         */
+        async function resetAccount() {
+            if (!stuffyProfileRef) return;
+            
+            try {
+                // 1. Delete the document from Firestore
+                await deleteDoc(stuffyProfileRef);
+
+                // 2. Reset the local state to default
+                state.stuffy = { ...DEFAULT_STUFFY_STATE };
+                state.isProfileSetup = false;
+                state.resetStep = 1;
+                state.tempSelectedEmoji = DEFAULT_STUFFY_STATE.profileEmoji; // Reset temporary setup state
+
+                // 3. Hide the reset modal
+                elements.resetModal.classList.add('hidden');
+
+                // 4. Render the setup screen
+                render();
+                showMessage("Account successfully reset! Time to enroll a new scholar. 📝");
+
+            } catch (error) {
+                console.error("Error deleting stuffy profile:", error);
+                showMessage(`Error resetting account: ${error.message}`);
+            }
+        }
+
+        /**
+         * Generates the HTML for the Syllabus based on the LESSON_UNITS structure.
+         */
+        function generateSyllabusHTML() {
+            let html = '';
+            const units = LESSON_UNITS;
+
+            for (const subject in units) {
+                const subjectData = units[subject];
+                html += `
+                    <div class="mb-6 p-4 bg-white border-2 border-pink-300 rounded-xl shadow-inner">
+                        <h3 class="text-xl font-extrabold text-pink-600 mb-2 flex items-center">
+                            <span class="text-2xl mr-2">${subjectData.icon}</span>
+                            ${subject}
+                        </h3>
+                        <p class="text-sm text-gray-500 mb-4 border-b pb-2">${subjectData.description}</p>
+                        <div class="space-y-3">
+                `;
+
+                for (const unitKey in subjectData.units) {
+                    html += `
+                        <div class="flex items-center p-3 bg-pink-50 rounded-lg justify-between">
+                            <div class="flex-1">
+                                <p class="font-semibold text-gray-700">${unitKey}</p>
+                                <p class="text-xs text-gray-400">(${subjectData.units[unitKey].length} lessons available)</p>
+                            </div>
+                            <button onclick="startLesson('${subject}', '${unitKey}')" 
+                                    class="bg-pink-200 text-pink-800 font-bold py-1 px-3 rounded-full hover:bg-pink-300 text-xs kawaii-button shadow-sm">
+                                Start Unit
+                            </button>
+                        </div>
+                    `;
+                }
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+            return html;
+        }
+
+        // Renders the current state to the DOM
+        function render() {
+            elements.loader.classList.add('hidden');
+            elements.userIdDisplay.textContent = `User ID: ${userId}`;
+
+            if (!state.isProfileSetup) {
+                elements.setupScreen.classList.remove('hidden');
+                elements.dashboard.classList.add('hidden');
+                
+                // RENDER: Emoji selector for setup screen
+                elements.emojiListContainer.innerHTML = generateEmojiSelectorHTML();
+                return;
+            }
+
+            // Dashboard View
+            elements.setupScreen.classList.add('hidden');
+            elements.dashboard.classList.remove('hidden');
+
+            // RENDER: Stuffy Profile Data
+            elements.stuffyNameDisplay.textContent = state.stuffy.name;
+            elements.stuffyEmojiDisplay.textContent = state.stuffy.profileEmoji; 
+            
+            elements.resetStuffyName1.textContent = state.stuffy.name;
+            elements.resetStuffyName3.textContent = state.stuffy.name;
+            elements.syllabusContainer.innerHTML = generateSyllabusHTML(); 
+
+            // Mood and Happiness Logic
+            let moodIcon, moodText, colorClass;
+            const h = state.stuffy.happiness;
+
+            if (h >= 80) {
+                moodIcon = '💖';
+                moodText = 'Super Cheerful!';
+                colorClass = 'bg-pink-400';
+            } else if (h >= 50) {
+                moodIcon = '😊';
+                moodText = 'Ready to Learn';
+                colorClass = 'bg-yellow-300';
+            } else if (h >= 20) {
+                moodIcon = '😐';
+                moodText = 'A Little Bored';
+                colorClass = 'bg-orange-400';
+            } else {
+                moodIcon = '😭';
+                moodText = 'Needs a Cuddle!';
+                colorClass = 'bg-red-500';
+            }
+
+            elements.moodIcon.textContent = moodIcon;
+            elements.moodDescription.textContent = moodText;
+            elements.happinessBar.style.width = `${Math.max(5, Math.min(100, h))}%`;
+            elements.happinessBar.className = `h-3 rounded-full transition-all duration-500 ${colorClass}`;
+            elements.happinessBar.setAttribute('aria-valuenow', h);
+            state.stuffy.mood = moodIcon + ' ' + moodText;
+            
+            // Re-run MathJax rendering on the dashboard if needed, though most math is in the modal
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+
+        // Updates the profile from Firestore data
+        function updateProfileFromSnapshot(docSnapshot) {
+            if (docSnapshot.exists()) {
+                const data = docSnapshot.data();
+                // Merge data, ensuring profileEmoji defaults if missing
+                state.stuffy = { 
+                    ...state.stuffy, 
+                    ...data,
+                    profileEmoji: data.profileEmoji || DEFAULT_STUFFY_STATE.profileEmoji 
+                };
+                state.isProfileSetup = !!data.name && data.name !== "New Friend";
+            } else {
+                state.isProfileSetup = false;
+                // If doc doesn't exist but local state is still "New Friend", don't force setup
+                if (state.stuffy.name !== DEFAULT_STUFFY_STATE.name) {
+                    state.stuffy = { ...DEFAULT_STUFFY_STATE }; // Hard reset local state if doc was deleted
+                }
+            }
+            state.isLoading = false;
+            render();
+        }
+
+        // --- Reset Confirmation Logic ---
+
+        window.showResetConfirmation = function() {
+            if (!state.isProfileSetup) return showMessage("No stuffie is currently enrolled to reset.");
+            
+            state.resetStep = 1;
+            elements.resetModal.classList.remove('hidden');
+            updateResetModalSteps();
+        }
+
+        window.closeResetModal = function() {
+            elements.resetModal.classList.add('hidden');
+            state.resetStep = 1;
+            updateResetModalSteps(); // Reset view for next time
+        }
+
+        window.nextResetStep = function() {
+            if (state.resetStep < 3) {
+                state.resetStep++;
+                updateResetModalSteps();
+            }
+        }
+
+        function updateResetModalSteps() {
+            elements.resetStep1.classList.toggle('hidden', state.resetStep !== 1);
+            elements.resetStep2.classList.toggle('hidden', state.resetStep !== 2);
+            elements.resetStep3.classList.toggle('hidden', state.resetStep !== 3);
+        }
+
+        // --- Event Handlers & Interactions ---
+
+        function updateHappiness(amount, showMsg = true) {
+            if (!state.isProfileSetup) return showMessage("Please set up your stuffie's name first!");
+
+            const newHappiness = Math.max(0, Math.min(100, state.stuffy.happiness + amount));
+            state.stuffy.happiness = newHappiness;
+
+            if (showMsg) {
+                if (amount > 0) {
+                     showMessage(amount > 15 ? `✨ BIG boost! ${state.stuffy.name} is thrilled!` : `💖 Small kindness for ${state.stuffy.name}!`);
+                } else {
+                     showMessage(`😔 ${state.stuffy.name} lost a little energy...`);
+                }
+            }
+
+            saveStuffyProfile();
+            render();
+        }
+
+        function handleNameSave() {
+            const newName = elements.stuffyNameInput.value.trim();
+            if (newName.length < 2) {
+                return showMessage("Please give your stuffie a proper name (at least 2 letters)!");
+            }
+            
+            // Get the chosen emoji from the pre-selected state 
+            const chosenEmoji = state.tempSelectedEmoji || DEFAULT_STUFFY_STATE.profileEmoji;
+
+            state.stuffy.name = newName;
+            state.stuffy.profileEmoji = chosenEmoji; 
+            state.isProfileSetup = true;
+            
+            updateHappiness(20); // Happiness boost for being registered!
+            saveStuffyProfile();
+            render();
+        }
+
+        /**
+         * Function to handle showing the lesson content modal, now accepting unitKey.
+         */
+        window.startLesson = function(subject, unitKey) {
+            if (!state.isProfileSetup) return showMessage("Please set up your stuffie's name first!");
+
+            // 1. Update Happiness (Energy Drain for learning)
+            updateHappiness(-10, false); // -10 happiness for effort
+
+            // 2. Generate dynamic content
+            const unitLessons = LESSON_UNITS[subject]?.units[unitKey];
+            if (!unitLessons || unitLessons.length === 0) return showMessage("No lessons found for this unit!");
+
+            // Pick a random lesson generator from the unit
+            const lessonGenerator = getRandomItem(unitLessons);
+            
+            const lessonData = lessonGenerator(state.stuffy.name);
+
+            // 3. Show modal
+            elements.lessonModalTitle.innerHTML = `${lessonData.icon} ${lessonData.title}`;
+            
+            // Use MathJax.typesetPromise() after injecting content to render LaTeX
+            elements.lessonModalContent.innerHTML = `
+                <div class="text-gray-700 leading-relaxed text-base text-left p-4 bg-gray-50 rounded-lg">
+                    ${lessonData.content.replace(/\n/g, '<br>')}
+                </div>
+                <p class="mt-6 text-sm text-pink-500 font-semibold border-t pt-4 border-pink-100">
+                    Lesson complete! ${state.stuffy.name} is now 10 points smarter (but 10 points sleepier!).
+                </p>
+            `;
+            
+            // IMPORTANT: Tell MathJax to process the new content
+            if (window.MathJax) {
+                MathJax.typesetPromise([elements.lessonModalContent]);
+            }
+
+            elements.lessonModal.classList.remove('hidden');
+            showMessage(`Starting ${unitKey} (${subject})! (-10 Happiness)`);
+        }
+
+        function closeModal() {
+            elements.lessonModal.classList.add('hidden');
+        }
+
+
+        // Initial setup and listener attachment
+        async function attachListeners(user) {
+            if (!user) return; // Wait for a user
+
+            userId = user.uid;
+            stuffyProfileRef = doc(db, getStuffyProfilePath(userId));
+
+            // Attach real-time listener
+            onSnapshot(stuffyProfileRef, (docSnapshot) => {
+                updateProfileFromSnapshot(docSnapshot);
+            }, (error) => {
+                console.error("Firestore Listener Error:", error);
+                showMessage("Failed to load real-time data from Firestore.");
+            });
+
+            // Button Click Handlers
+            elements.saveNameButton.onclick = handleNameSave;
+            elements.giveHugBtn.onclick = () => updateHappiness(15);
+            elements.giveSnackBtn.onclick = () => updateHappiness(10);
+            elements.closeModalBtn.onclick = closeModal;
+            
+            // New Reset Button Handlers
+            elements.resetAccountBtn.onclick = window.showResetConfirmation;
+            elements.closeResetModalBtn.onclick = window.closeResetModal;
+            elements.confirmResetBtn1.onclick = window.nextResetStep;
+            elements.confirmResetBtn2.onclick = window.nextResetStep;
+            elements.finalResetBtn.onclick = resetAccount;
+        }
+
+        async function initApp() {
+            mapElements(); // Map elements first
+            if (!firebaseConfig) {
+                console.error("Firebase configuration is missing.");
+                elements.loader.textContent = "Error: Firebase config not found.";
+                return;
+            }
+
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+
+                // 1. Authenticate the user
+                if (initialAuthToken) {
+                    await signInWithCustomToken(auth, initialAuthToken);
+                } else {
+                    await signInAnonymously(auth);
+                }
+
+                // 2. Wait for auth state change and attach listeners
+                onAuthStateChanged(auth, (user) => {
+                    if (user) {
+                        attachListeners(user);
+                    } else {
+                        console.log("No user signed in.");
+                        userId = 'guest';
+                        state.isLoading = false;
+                        render();
+                    }
+                });
+
+            } catch (error) {
+                console.error("Firebase Initialization or Auth Error:", error);
+                elements.loader.textContent = `Initialization Error: ${error.message}`;
+            }
+        }
+
+        window.onload = initApp;
+
+    </script>
+    <style>
+        /* FONT CHANGE: Using Jua from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+        body {
+            font-family: 'Jua', sans-serif;
+            background-color: #FFFAF0; /* Soft cream background */
+        }
+        .kawaii-card {
+            background-color: #FFFFFF;
+            border: 4px solid #FDBFBF; /* Pastel pink border */
+            box-shadow: 8px 8px 0px #FDBFBF; /* Cute shadow */
+            transition: all 0.2s;
+        }
+        .kawaii-card:hover {
+             box-shadow: 12px 12px 0px #FDBFBF;
+        }
+        .kawaii-button {
+            transition: all 0.1s;
+        }
+        .kawaii-button:active {
+            transform: translateY(2px);
+            box-shadow: none !important;
+        }
+        .lesson-icon {
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 flex flex-col items-center justify-start">
+
+    <!-- Title and User ID -->
+    <header class="w-full max-w-lg mb-6 text-center">
+        <h1 class="text-4xl font-black text-pink-500 mb-2 drop-shadow-md">
+            Stuffie Scholars Academy
+        </h1>
+        <p id="user-id-display" class="text-xs text-gray-500"></p>
+    </header>
+
+    <!-- Global Message Box (replaces alert) -->
+    <div id="message-box" class="fixed top-4 z-50 p-3 bg-green-200 border-2 border-green-500 rounded-lg shadow-xl hidden">
+        <p id="message-text" class="text-sm font-semibold text-gray-800"></p>
+    </div>
+
+    <!-- Lesson Modal (Overlay) -->
+    <div id="lesson-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="kawaii-card bg-white p-6 sm:p-8 rounded-2xl w-full max-w-lg relative max-h-[90vh] overflow-y-auto">
+            <button id="close-modal-btn" class="absolute top-3 right-3 text-3xl hover:opacity-75 focus:outline-none">
+                ❌
+            </button>
+            <h2 id="lesson-modal-title" class="text-2xl font-black text-pink-500 mb-4 text-center pb-2 border-b-2 border-pink-200"></h2>
+            <div id="lesson-modal-content" class="text-center">
+                <!-- Lesson content will be injected and rendered here by MathJax -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reset Confirmation Modal (Triple Check) -->
+    <div id="reset-modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="kawaii-card bg-white p-6 sm:p-8 rounded-2xl w-full max-w-sm relative max-h-[90vh] overflow-y-auto">
+            <button id="close-reset-modal-btn" class="absolute top-3 right-3 text-xl text-gray-400 hover:text-gray-600 focus:outline-none">
+                Close
+            </button>
+            <h2 class="text-2xl font-black text-red-500 mb-4 text-center pb-2 border-b-2 border-red-200">
+                🚨 Account Reset Warning 🚨
+            </h2>
+
+            <!-- Step 1 -->
+            <div id="reset-step-1" class="text-center space-y-4">
+                <p class="text-lg font-semibold text-gray-700">Are you sure you want to reset and delete all progress for <span id="reset-stuffy-name-1" class="text-red-600 font-bold">[Stuffy Name]</span>?</p>
+                <p class="text-sm text-gray-500">This will erase all happiness, mood history, and name registration.</p>
+                <button id="confirm-reset-btn-1" class="w-full bg-red-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-red-200 hover:bg-red-500 kawaii-button">
+                    Yes, I Understand
+                </button>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="reset-step-2" class="hidden text-center space-y-4">
+                <p class="text-lg font-semibold text-red-700">Warning: This action is permanent and cannot be undone.</p>
+                <p class="text-sm text-gray-600">You will lose all saved data, including happiness and academic records. There is no undo button!</p>
+                <button id="confirm-reset-btn-2" class="w-full bg-orange-500 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-orange-300 hover:bg-orange-600 kawaii-button">
+                    Yes, Delete Progress
+                </button>
+            </div>
+
+            <!-- Step 3 (Final Check) -->
+            <div id="reset-step-3" class="hidden text-center space-y-4">
+                <p class="text-xl font-bold text-red-800">ONE LAST TIME:</p>
+                <p class="text-lg text-gray-700">Confirm deletion for <span id="reset-stuffy-name-3" class="text-red-600 font-extrabold">[Stuffy Name]</span>?</p>
+                <button id="final-reset-btn" class="w-full bg-red-700 text-white font-extrabold py-4 px-4 rounded-xl shadow-lg shadow-red-300 hover:bg-red-800 kawaii-button">
+                    DELETE ACCOUNT NOW! 💥
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Loading State -->
+    <div id="app-loader" class="p-8 text-center">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-4 border-pink-400 mx-auto mb-4"></div>
+        <p class="text-pink-600 font-semibold">Gathering the study snacks...</p>
+    </div>
+
+    <!-- 1. Setup Screen -->
+    <main id="setup-screen" class="hidden w-full max-w-md p-6 kawaii-card rounded-2xl">
+        <h2 class="text-2xl font-bold text-gray-700 mb-4 text-center">Welcome, Tutor!</h2>
+        <p class="text-gray-500 mb-6 text-center">Let's register your first Stuffie Scholar.</p>
+
+        <!-- Emoji Selector - Now Preset Only -->
+        <div class="mb-6">
+            <label class="block text-lg font-semibold text-pink-500 mb-3 text-center">Choose Your Avatar:</label>
+            <div id="emoji-list-container" class="grid grid-cols-5 gap-3 justify-items-center mb-4">
+                <!-- Emojis injected here by JS -->
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label for="stuffy-name-input" class="block text-lg font-semibold text-pink-500 mb-2">Stuffie's Name:</label>
+            <input type="text" id="stuffy-name-input" placeholder="e.g., Barnaby Bear" class="w-full p-3 border-2 border-pink-300 rounded-xl focus:border-pink-500 focus:ring-pink-500">
+        </div>
+
+        <button id="save-name-btn" class="w-full bg-pink-400 text-white font-bold py-3 px-4 rounded-xl shadow-lg shadow-pink-200 hover:bg-pink-500 kawaii-button">
+            Enroll Scholar! 🎓
+        </button>
+    </main>
+
+    <!-- 2. Dashboard -->
+    <main id="dashboard" class="hidden w-full max-w-lg space-y-6">
+
+        <!-- A. Stuffy Status Card -->
+        <div class="p-6 kawaii-card rounded-2xl text-center">
+            
+            <div class="flex items-center justify-center mb-2 space-x-2">
+                <span id="stuffy-emoji-display" class="text-4xl">🧸</span> 
+                <h2 id="stuffy-name-display" class="text-3xl font-extrabold text-pink-600"></h2>
+            </div>
+
+
+            <!-- Mood and Happiness -->
+            <div class="flex items-center justify-center space-x-4 mb-4">
+                <span id="mood-icon" class="text-5xl"></span>
+                <p id="mood-description" class="text-xl font-semibold text-gray-700"></p>
+            </div>
+
+            <!-- Happiness Bar -->
+            <div class="bg-gray-200 rounded-full h-3 w-full mb-6" role="progressbar" aria-label="Stuffy Happiness">
+                <div id="happiness-bar" class="h-3 rounded-full transition-all duration-500" style="width: 50%;"></div>
+            </div>
+
+            <div class="flex justify-around space-x-4">
+                <button id="give-hug-btn" class="flex-1 bg-green-300 text-green-800 font-bold py-3 px-2 rounded-xl shadow-md shadow-green-200 hover:bg-green-400 kawaii-button text-sm sm:text-base">
+                    Give Hug (+15) 🫂
+                </button>
+                <button id="give-snack-btn" class="flex-1 bg-yellow-300 text-yellow-800 font-bold py-3 px-2 rounded-xl shadow-md shadow-yellow-200 hover:bg-yellow-400 kawaii-button text-sm sm:text-base">
+                    Give Snack (+10) 🍓
+                </button>
+            </div>
+            
+            <button id="reset-account-btn" class="mt-4 w-full text-xs text-red-400 hover:text-red-600 font-semibold py-2 rounded-lg border border-red-200 hover:bg-red-50 transition-colors">
+                Reset Account (Delete Progress)
+            </button>
+        </div>
+
+        <!-- B. Daily Lesson Planner - Now showing Units -->
+        <div class="p-6 kawaii-card rounded-2xl">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4 border-b-2 border-pink-100 pb-2">Daily Syllabus</h2>
+
+            <div id="syllabus-container">
+                <!-- Unit structure will be dynamically injected here by generateSyllabusHTML -->
+            </div>
+        </div>
+
+        <!-- C. Stuffy Planner -->
+        <div class="p-6 kawaii-card rounded-2xl text-center text-gray-500 text-sm">
+            <p>Remember: Learning is tough! Stuffies need lots of love and attention to boost their <strong>Happiness</strong> score and perform well in their <strong>Cuddle History</strong> and <strong>Snack Math</strong> classes.</p>
+        </div>
+    </main>
+
+
+</body></html>

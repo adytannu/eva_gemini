@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjY0ZjA3ZDcxOTc5ZjQzODI3MjJhOGRmMzQwNzUzY2UwZmVkOThjYTgiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMjc1ODM2MTU4NDMzNTIyMzc4MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJiYWUxMjIzMDBlMGEtc2FuZHdpY2hfbWFrZXIuaHRtbC03MTkifSwiZXhwIjoxNzcxNTY2ODU4LCJpYXQiOjE3NzE1NjMyNTgsImFsZyI6IlJTMjU2In0.BNzy16vt7yFx7S9c8Jwbot8vLRqG6Fnh5vXRELjSUvzi_VL5NRMjq9-P3XELV6j8rwnfXSu1A7hjt33hq38opOsRZzjwVrxxugx72_Gbxp1BPuMrE4PLyCJBt6_dAxyambixl0KkecvLYLZKpH1Q6NfmEuXYou5MT9XjcFGNXpfL7u2wc1ow1LWU9xKkClFy9gO3InQ4Bia3tbwstFlZBdMQI3pNEA6txJqXUITymmUg6xAumoPzL4xgoTZGc22LjLrwd4CDNnafF9p1V8L_Ef39uzuNQVjH6myQZFN90NKKwgRPu27-6Ev_MkHwoKmErzPAmVSQ5bAttIBsfaR_ow","bae122300e0a-sandwich_maker.html-719")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Sandwich Maker</title>
+    
+
+<script src="https://cdn.tailwindcss.com"></script>
+    
+
+<script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, onSnapshot, collection } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Global variables provided by the environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+
+        let db;
+        let auth;
+        let userId = null;
+        let isAuthReady = false;
+
+        // --- Firebase Initialization and Authentication (Mandatory Setup) ---
+        if (Object.keys(firebaseConfig).length > 0) {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                auth = getAuth(app);
+                setLogLevel('Debug');
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        userId = user.uid;
+                        console.log("Firebase Auth: Signed in. User ID:", userId);
+                    } else {
+                        try {
+                            if (initialAuthToken) {
+                                await signInWithCustomToken(auth, initialAuthToken);
+                            } else {
+                                await signInAnonymously(auth);
+                            }
+                        } catch (error) {
+                            console.error("Firebase Sign-in Failed:", error);
+                        }
+                    }
+                    isAuthReady = true;
+                    document.getElementById('user-id-display').textContent = userId || 'N/A';
+                    initGame(db, userId, isAuthReady);
+                });
+
+            } catch (error) {
+                console.error("Firebase Initialization Failed:", error);
+                initGame(null, null, true);
+            }
+        } else {
+            initGame(null, null, true);
+        }
+
+        // Expose initGame globally to handle the rest of the JS logic
+        window.initGame = function(db, currentUserId, ready) {
+            // Mandatory onSnapshot setup (dummy to fulfill requirement)
+            if (db && currentUserId) {
+                const dummyRef = doc(collection(db, `artifacts/${appId}/users/${currentUserId}/sandwiches`), "dummyDoc");
+                const unsubscribe = onSnapshot(dummyRef, (doc) => {
+                    // console.log("Dummy listener triggered (Firestore check successful).");
+                }, (error) => {
+                    console.error("Firestore dummy listener error:", error);
+                });
+            }
+            const game = new SandwichGame();
+            game.setup();
+        };
+
+        // Base64 to ArrayBuffer utility (not used by this app, but kept as a general utility placeholder)
+        function base64ToArrayBuffer(base64) {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+        :root {
+            --primary-color: #FFC0CB; /* Pink */
+            --secondary-color: #F7E4BE; /* Creamy yellow */
+            --accent-color: #87CEEB; /* Sky blue */
+            --text-color: #4A4A4A;
+        }
+
+        body {
+            font-family: 'Fredoka', cursive;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        /* Cute Button Style */
+        .game-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 9999px; /* Fully rounded */
+            box-shadow: 0 4px 0 #D0909B;
+            transition: all 0.1s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            line-height: 1.25;
+            font-size: 0.9rem;
+        }
+
+        .game-btn:hover:not(:disabled) {
+            background-color: #F5B0BD;
+        }
+        .game-btn:active:not(:disabled) {
+            box-shadow: 0 1px 0 #D0909B;
+            transform: translateY(3px);
+        }
+        .game-btn:disabled {
+             opacity: 0.6;
+             cursor: not-allowed;
+             box-shadow: 0 4px 0 #D0909B;
+        }
+
+        /* Ingredient Button Styles */
+        .ingredient-btn {
+            @apply flex flex-col items-center justify-center p-2 rounded-xl text-xs sm:text-sm transition-transform duration-100 ease-in-out hover:scale-105;
+            border: 2px solid var(--text-color);
+            background-color: #FFFFFF;
+        }
+        .ingredient-btn span.emoji {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Sandwich Area */
+        #sandwich-container {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            background: #F0F0F0;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .sandwich-layer {
+            width: 90%;
+            height: 30px; /* Base height for standard layers */
+            border-radius: 0.5rem;
+            position: relative;
+            z-index: 10;
+            margin-top: -15px; /* Overlap layers */
+            transition: all 0.3s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #4A4A4A;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bread-top, .bread-bottom {
+            height: 40px; /* Taller bread slice */
+            width: 95%;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-weight: bold;
+        }
+
+        .bread-bottom {
+            margin-top: 0;
+            border-radius: 0.5rem 0.5rem 0.75rem 0.75rem;
+        }
+
+        .bread-top {
+            /* This will be applied dynamically when the sandwich is finished */
+        }
+
+        /* Utility for categories */
+        .category-title {
+            @apply text-lg font-bold my-2 text-center text-gray-700;
+            background-color: #e0f7fa;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="text-center mb-6">
+        <h1 class="text-4xl font-extrabold text-pink-600 mb-1">🥪 Cute Sandwich Maker 🍓</h1>
+        <p class="text-gray-600">Stack your way to a delicious creation!</p>
+        <p class="text-xs mt-2 text-gray-500" id="user-id-display-label">User ID: <span id="user-id-display">N/A</span></p>
+    </header>
+
+    <main class="w-full max-w-4xl flex flex-col lg:flex-row gap-6">
+
+        
+
+<div class="lg:w-1/3 flex flex-col items-center p-4 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-4">Your Masterpiece</h2>
+            <div id="sandwich-container">
+                
+
+</div>
+            <div class="flex space-x-4 mt-4">
+                <button id="reset-btn" class="game-btn">Start Over</button>
+                <button id="finish-btn" class="game-btn bg-green-500 shadow-green-700 hover:bg-green-400">Finish Sandwich!</button>
+            </div>
+            <div id="message-box" class="mt-4 text-center text-pink-600 font-bold">Ready to build!</div>
+        </div>
+
+        
+
+<div class="lg:w-2/3 p-4 bg-white rounded-2xl shadow-xl">
+            <h2 class="text-2xl font-bold mb-4 text-center">Ingredients</h2>
+
+            
+
+<div class="mb-4">
+                <div class="category-title">Bread Base</div>
+                <div id="bread-selector" class="grid grid-cols-2 gap-3">
+                    
+
+</div>
+            </div>
+
+            <hr class="my-4 border-gray-200">
+
+            
+
+<div class="mb-4">
+                <div class="category-title">Sweet Cream &amp; Fruits</div>
+                <div id="sweet-selector" class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                    
+
+</div>
+            </div>
+
+            
+
+<div>
+                <div class="category-title">Savory Fillings &amp; Condiments</div>
+                <div id="savory-selector" class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+                    
+
+</div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // --- Gemini API Constants and Utilities ---
+        const API_KEY = "";
+        const IMAGE_MODEL = 'gemini-2.5-flash-image-preview';
+        const IMAGE_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${IMAGE_MODEL}:generateContent?key=${API_KEY}`;
+        const MAX_RETRIES = 5;
+
+        async function exponentialBackoffFetch(url, options, retries = 0) {
+            try {
+                const response = await fetch(url, options);
+                if (response.status === 429 && retries < MAX_RETRIES) {
+                    const delay = Math.pow(2, retries) * 1000 + Math.random() * 1000;
+                    console.warn(`Rate limit hit (429). Retrying in ${Math.round(delay / 1000)}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return exponentialBackoffFetch(url, options, retries + 1);
+                }
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+                return response;
+            } catch (error) {
+                if (retries < MAX_RETRIES) {
+                    const delay = Math.pow(2, retries) * 1000 + Math.random() * 1000;
+                    console.warn(`Fetch error. Retrying in ${Math.round(delay / 1000)}s...`);
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return exponentialBackoffFetch(url, options, retries + 1);
+                }
+                throw new Error(`Fetch failed after ${MAX_RETRIES} attempts: ${error.message}`);
+            }
+        }
+
+        // --- Sandwich Game Class ---
+        class SandwichGame {
+            constructor() {
+                this.INGREDIENTS = [
+                    // --- BREADS (8 total) ---
+                    { id: 'white_bread', name: 'White Bread', type: 'bread', emoji: '🍞', color: '#F0EAD6' },
+                    { id: 'whole_wheat', name: 'Whole Wheat', type: 'bread', emoji: '🥖', color: '#CD853F' },
+                    { id: 'sourdough', name: 'Sourdough', type: 'bread', emoji: '🧀', color: '#F5DEB3' },
+                    { id: 'rye', name: 'Rye Bread', type: 'bread', emoji: '🌾', color: '#8B4513' },
+                    { id: 'pumpernickel', name: 'Pumpernickel', type: 'bread', emoji: '⚫', color: '#4F332E' },
+                    { id: 'brioche', name: 'Brioche', type: 'bread', emoji: '🧈', color: '#FFF8DC' },
+                    { id: 'focaccia', name: 'Focaccia', type: 'bread', emoji: '🫓', color: '#F0E68C' },
+                    { id: 'pretzel_roll', name: 'Pretzel Roll', type: 'bread', emoji: '🥨', color: '#B8860B' },
+                    
+                    // --- SWEET CREAM & FRUITS (14 total) ---
+                    { id: 'whipped_cream', name: 'Whipped Cream', type: 'sweet', emoji: '🍦', color: '#FFFFFF', isCream: true },
+                    { id: 'strawberry', name: 'Strawberry', type: 'sweet', emoji: '🍓', color: '#FF6699' },
+                    { id: 'kiwi', name: 'Kiwi Slices', type: 'sweet', emoji: '🥝', color: 'mediumseagreen' },
+                    { id: 'chocolate', name: 'Chocolate Spread', type: 'sweet', emoji: '🍫', color: '#4A2C2A' },
+                    { id: 'blueberry', name: 'Blueberries', type: 'sweet', emoji: '🫐', color: '#483D8B' },
+                    { id: 'custard', name: 'Custard Cream', type: 'sweet', emoji: '🍮', color: '#F0E68C', isCream: true },
+                    { id: 'mochi', name: 'Mochi Balls', type: 'sweet', emoji: '🍡', color: '#FFDAB9', height: '15px' },
+                    { id: 'peanut_butter', name: 'Peanut Butter', type: 'sweet', emoji: '🥜', color: '#A0522D', isCream: true }, 
+                    { id: 'grape_jelly', name: 'Grape Jelly', type: 'sweet', emoji: '🍇', color: '#6A0DAD', height: '20px' }, 
+                    { id: 'banana', name: 'Banana Slices', type: 'sweet', emoji: '🍌', color: '#FFD700' },
+                    { id: 'marshmallow', name: 'Marshmallow', type: 'sweet', emoji: '🍬', color: '#FAFAFA', isCream: true },
+                    { id: 'nutella', name: 'Nutella', type: 'sweet', emoji: '🌰', color: '#654321', isCream: true },
+                    { id: 'raspberry_jam', name: 'Raspberry Jam', type: 'sweet', emoji: '🔴', color: '#E30B5C', height: '15px' },
+                    { id: 'apple_slices', name: 'Apple Slices', type: 'sweet', emoji: '🍏', color: '#F0FFF0' },
+                    
+
+                    // --- SAVORY FILLINGS & CONDIMENTS (14 total) ---
+                    { id: 'ham', name: 'Deli Ham', type: 'savory', emoji: '🍖', color: '#FFA07A' },
+                    { id: 'turkey', name: 'Turkey Breast', type: 'savory', emoji: '🦃', color: '#D2B48C' },
+                    { id: 'cheese', name: 'Cheddar Cheese', type: 'savory', emoji: '🧀', color: '#FAD300' },
+                    { id: 'lettuce', name: 'Lettuce', type: 'savory', emoji: '🥬', color: '#90EE90' },
+                    { id: 'tomato', name: 'Tomato', type: 'savory', emoji: '🍅', color: '#FF6347' },
+                    { id: 'pickles', name: 'Pickles', type: 'savory', emoji: '🥒', color: '#556B2F' },
+                    { id: 'bacon', name: 'Bacon Strip', type: 'condiment', emoji: '🥓', color: '#A52A2A', height: '15px' },
+                    { id: 'mustard', name: 'Mustard', type: 'condiment', emoji: '🟡', color: '#FFDB58', height: '15px' },
+                    { id: 'mayo', name: 'Mayo', type: 'condiment', emoji: '⚪', color: '#F0F8FF', height: '15px' },
+                    { id: 'ketchup', name: 'Ketchup', type: 'condiment', emoji: '🔴', color: '#DC143C', height: '15px' },
+                    { id: 'egg_salad', name: 'Egg Salad', type: 'savory', emoji: '🥚', color: '#FAFAD2', isCream: true },
+                    { id: 'avocado', name: 'Avocado', type: 'savory', emoji: '🥑', color: '#8FBC8F' },
+                    { id: 'salami', name: 'Salami', type: 'savory', emoji: '🌶️', color: '#CD5C5C', height: '15px' },
+                    { id: 'hot_sauce', name: 'Hot Sauce', type: 'condiment', emoji: '🔥', color: '#8B0000', height: '10px' },
+                ];
+
+                this.sandwichLayers = [];
+                this.dom = {
+                    container: document.getElementById('sandwich-container'),
+                    messageBox: document.getElementById('message-box'),
+                    breadSelector: document.getElementById('bread-selector'),
+                    sweetSelector: document.getElementById('sweet-selector'),
+                    savorySelector: document.getElementById('savory-selector'),
+                    resetBtn: document.getElementById('reset-btn'),
+                    finishBtn: document.getElementById('finish-btn'),
+                };
+            }
+
+            setup() {
+                this.renderIngredientButtons();
+                this.dom.resetBtn.addEventListener('click', () => this.resetSandwich());
+                this.dom.finishBtn.addEventListener('click', () => this.finishSandwich());
+                this.renderSandwich();
+            }
+
+            renderIngredientButtons() {
+                const breadList = this.INGREDIENTS.filter(i => i.type === 'bread');
+                const sweetList = this.INGREDIENTS.filter(i => i.type === 'sweet');
+                const savoryList = this.INGREDIENTS.filter(i => i.type === 'savory' || i.type === 'condiment');
+
+                const renderButtons = (list, container) => {
+                    container.innerHTML = list.map(item => `
+                        <button class="ingredient-btn" data-id="${item.id}" data-type="${item.type}">
+                            <span class="emoji">${item.emoji}</span>
+                            <span>${item.name}</span>
+                        </button>
+                    `).join('');
+                    container.querySelectorAll('.ingredient-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => this.addLayer(e.currentTarget.dataset.id));
+                        // Disable non-bread items initially
+                        if (list !== breadList) {
+                             btn.disabled = true;
+                             btn.classList.add('opacity-50', 'cursor-not-allowed');
+                        }
+                    });
+                };
+
+                // Adjust grid based on the increased number of ingredients
+                this.dom.breadSelector.classList.remove('sm:grid-cols-4', 'grid-cols-2');
+                this.dom.breadSelector.classList.add('grid-cols-4', 'sm:grid-cols-4');
+                this.dom.sweetSelector.classList.remove('sm:grid-cols-5', 'grid-cols-3');
+                this.dom.sweetSelector.classList.add('grid-cols-4', 'sm:grid-cols-7');
+                this.dom.savorySelector.classList.remove('sm:grid-cols-5', 'grid-cols-3');
+                this.dom.savorySelector.classList.add('grid-cols-4', 'sm:grid-cols-7');
+
+                renderButtons(breadList, this.dom.breadSelector);
+                renderButtons(sweetList, this.dom.sweetSelector);
+                renderButtons(savoryList, this.dom.savorySelector);
+            }
+
+            updateIngredientButtonStates(enable) {
+                // Get all ingredient buttons except bread
+                const allButtons = [...this.dom.sweetSelector.querySelectorAll('.ingredient-btn'), ...this.dom.savorySelector.querySelectorAll('.ingredient-btn')];
+
+                allButtons.forEach(btn => {
+                    btn.disabled = !enable;
+                    if (enable) {
+                        btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    } else {
+                        btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    }
+                });
+            }
+
+            addLayer(ingredientId) {
+                const item = this.INGREDIENTS.find(i => i.id === ingredientId);
+
+                if (!item) return;
+
+                if (this.sandwichLayers.length === 0) {
+                    if (item.type !== 'bread') {
+                        this.dom.messageBox.textContent = "First, you need a bread base! 🍞";
+                        return;
+                    }
+                    this.sandwichLayers.push({ ...item, isBottomBread: true });
+                    this.dom.messageBox.textContent = `Added ${item.name} as the base! Now stack your fillings.`;
+                    this.dom.breadSelector.querySelectorAll('.ingredient-btn').forEach(btn => {
+                        btn.disabled = true;
+                        btn.classList.add('opacity-50', 'cursor-not-allowed');
+                    });
+                    this.updateIngredientButtonStates(true);
+
+
+                } else if (this.sandwichLayers.length < 15) {
+                    this.sandwichLayers.push(item);
+                    this.dom.messageBox.textContent = `Layered with ${item.name}! Keep stacking!`;
+                } else {
+                    this.dom.messageBox.textContent = "That's a tall sandwich! Time to finish it.";
+                }
+
+                this.renderSandwich();
+            }
+
+            renderSandwich() {
+                this.dom.container.innerHTML = '';
+                
+                // Render a placeholder if the image generation failed or is ongoing
+                if (this.sandwichLayers.length === 0) {
+                     this.dom.container.style.height = '300px';
+                     this.dom.container.classList.remove('p-2'); // Remove padding when showing blocks
+                     return;
+                }
+
+                // Render colored block layers
+                this.sandwichLayers.forEach((layerData, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('sandwich-layer');
+
+                    const baseColor = layerData.color;
+                    const isBread = layerData.isBottomBread;
+                    const layerHeight = layerData.height || (layerData.isCream ? '40px' : '30px');
+
+                    div.style.backgroundColor = baseColor;
+                    div.style.height = layerHeight;
+                    div.style.zIndex = index + 1;
+                    div.style.boxShadow = `0 2px 4px ${isBread ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.15)'}`;
+
+                    // NO TEXT OR EMOJIS IN THE DISPLAY
+                    div.innerHTML = ''; 
+
+                    this.dom.container.appendChild(div);
+                });
+
+                // Adjust total container height based on number of layers
+                const totalLayers = this.sandwichLayers.length;
+                const newHeight = 50 + (totalLayers * 20);
+                this.dom.container.style.height = `${Math.min(400, newHeight)}px`;
+                this.dom.container.classList.remove('p-2');
+            }
+
+            // --- NEW IMAGE GENERATION LOGIC ---
+
+            async generateSandwichImage() {
+                if (this.sandwichLayers.length < 2) {
+                    this.dom.messageBox.textContent = "You need more than just one piece of bread to make a sandwich!";
+                    this.dom.finishBtn.disabled = false;
+                    return;
+                }
+
+                this.dom.container.innerHTML = `<p class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-gray-500 font-bold animate-pulse">Generating sandwich image... 🎨</p>`;
+                this.dom.messageBox.textContent = "Generating image... Please wait, this may take a few seconds.";
+                this.dom.finishBtn.disabled = true;
+                this.dom.resetBtn.disabled = true;
+
+                // 1. Construct Descriptive Prompt
+                const ingredientNames = this.sandwichLayers.map(i => i.name).reverse();
+                const uniqueIngredients = [...new Set(ingredientNames)].join(', ');
+                const baseBread = this.sandwichLayers[0].name;
+
+                const prompt = `A hyper-realistic, cute food photograph of a towering, vertically-stacked gourmet sandwich. The sandwich uses ${baseBread} as the bottom slice and is topped with an identical slice of ${baseBread}. The visible fillings, stacked high, include: ${uniqueIngredients}. The image should be brightly colored, visually appealing, and show a clear cross-section view of the stack. Cinematic lighting.`;
+
+                const payload = {
+                    contents: [{
+                        parts: [{ text: prompt }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ['TEXT', 'IMAGE']
+                    },
+                };
+
+                try {
+                    const response = await exponentialBackoffFetch(IMAGE_API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+
+                    if (!base64Data) {
+                        throw new Error("Could not extract image data from the API response.");
+                    }
+
+                    const imageUrl = `data:image/png;base64,${base64Data}`;
+                    this.displayGeneratedImage(imageUrl, baseBread);
+
+                } catch (error) {
+                    console.error("Image generation failed:", error);
+                    this.dom.messageBox.textContent = "Image generation failed. Please try again. (Check console for error)";
+                    // Re-enable buttons on failure
+                    this.dom.finishBtn.disabled = false;
+                    this.dom.resetBtn.disabled = false;
+                    this.renderSandwich(); // Re-render blocks if generation fails
+                }
+            }
+
+            displayGeneratedImage(imageUrl, breadName) {
+                this.dom.container.innerHTML = '';
+                this.dom.container.style.height = '400px'; // Set standard height for the image display
+                this.dom.container.classList.add('p-2'); // Add padding for better image fit
+
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = `Generated ${breadName} Sandwich Image`;
+                img.classList.add('w-full', 'h-full', 'object-contain', 'rounded-xl');
+
+                this.dom.container.appendChild(img);
+
+                this.dom.messageBox.textContent = "✨ SANDWICH FINISHED! ✨ Feast your eyes on this creation!";
+                this.dom.finishBtn.disabled = true;
+                this.dom.resetBtn.disabled = false;
+            }
+
+            finishSandwich() {
+                if (this.sandwichLayers.length < 1) {
+                    this.dom.messageBox.textContent = "You need a base before you can finish!";
+                    return;
+                }
+
+                // Immediately disable all ingredient selection buttons
+                this.dom.breadSelector.querySelectorAll('.ingredient-btn').forEach(btn => btn.disabled = true);
+                this.updateIngredientButtonStates(false);
+
+                // Start the image generation process
+                this.generateSandwichImage();
+            }
+
+            resetSandwich() {
+                this.sandwichLayers = [];
+                this.renderSandwich();
+                this.dom.messageBox.textContent = "Ready to build! Choose your bread base.";
+
+                // Re-enable bread selection and disable fillings
+                this.dom.breadSelector.querySelectorAll('.ingredient-btn').forEach(btn => {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                });
+                this.updateIngredientButtonStates(false);
+                this.dom.finishBtn.disabled = false;
+            }
+        }
+
+    </script>
+
+</body></html>
